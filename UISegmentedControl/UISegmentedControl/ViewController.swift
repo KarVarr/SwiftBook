@@ -70,9 +70,20 @@ class ViewController: UIViewController {
         guard textField.text?.isEmpty == false else {return}
         if let name = Double(textField.text ?? "Error") {
             print("Name format is wrong \(name)")
+            let alert = UIAlertController(title: "Wrong format", message: "Please enter your name", preferredStyle: .alert)
+            alert.addTextField{alertTextField in
+                alertTextField.placeholder = "Enter Your Name"
+                self.textField = alertTextField
+            }
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(okAction)
+            present(alert, animated: true)
+            textField.text = ""
+            
             return
         } else {
             label.text = textField.text
+            textField.text = ""
         }
         
         
