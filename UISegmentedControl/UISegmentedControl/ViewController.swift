@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +34,8 @@ class ViewController: UIViewController {
         slider.minimumTrackTintColor = .tintColor
         slider.maximumTrackTintColor = .purple
         slider.thumbTintColor = .cyan
+        
+        datePicker.locale = Locale(identifier: "ru_RU")
         
         
     }
@@ -89,6 +94,16 @@ class ViewController: UIViewController {
         
     }
     
+    
+    @IBAction func changeDate(_ sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        let dateValue = dateFormatter.string(from: sender.date)
+        label.text = dateValue
+        
+       
+    }
     
 }
 
