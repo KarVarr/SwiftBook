@@ -13,8 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var slider: UISlider!
-    
-    
+    @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +31,7 @@ class ViewController: UIViewController {
         slider.minimumTrackTintColor = .tintColor
         slider.maximumTrackTintColor = .purple
         slider.thumbTintColor = .cyan
+        
         
     }
 
@@ -59,8 +59,25 @@ class ViewController: UIViewController {
     @IBAction func sliderAction(_ sender: UISlider) {
         label.text = String(format: "%.1f", slider.value)
         
+        
         let viewBackground = self.view.backgroundColor
         self.view.backgroundColor = viewBackground?.withAlphaComponent(CGFloat(sender.value))
     }
+    
+    
+    @IBAction func donePressed(_ sender: UIButton) {
+       
+        guard textField.text?.isEmpty == false else {return}
+        if let name = Double(textField.text ?? "Error") {
+            print("Name format is wrong \(name)")
+            return
+        } else {
+            label.text = textField.text
+        }
+        
+        
+    }
+    
+    
 }
 
