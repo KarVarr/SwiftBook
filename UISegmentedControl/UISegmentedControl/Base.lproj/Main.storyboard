@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52Q-3e-s3h">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52Q-3e-s3h">
                                 <rect key="frame" x="20" y="47" width="388" height="845"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wxz-JT-b5i">
                                         <rect key="frame" x="72" y="8" width="245" height="32"/>
@@ -76,27 +75,50 @@
                                             <action selector="changeDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="Mce-KJ-q1B"/>
                                         </connections>
                                     </datePicker>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fwn-la-hMH">
+                                        <rect key="frame" x="303" y="751" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="thumbTintColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="switchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="uey-nT-h17"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hide all elements!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQ4-m8-bhd">
+                                        <rect key="frame" x="34" y="756" width="136" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="9OG-cA-JcA" firstAttribute="bottom" secondItem="rQ4-m8-bhd" secondAttribute="bottom" constant="68" id="1kc-yi-gyn"/>
+                                    <constraint firstItem="rQ4-m8-bhd" firstAttribute="top" secondItem="KUd-D9-ShX" secondAttribute="bottom" constant="111" id="3Bp-hX-oQr"/>
                                     <constraint firstItem="9OG-cA-JcA" firstAttribute="trailing" secondItem="A36-hm-JdR" secondAttribute="trailing" constant="71" id="3RE-Xq-bpr"/>
-                                    <constraint firstItem="9OG-cA-JcA" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="KUd-D9-ShX" secondAttribute="bottom" constant="200" id="8yk-tj-QhC"/>
+                                    <constraint firstItem="fwn-la-hMH" firstAttribute="leading" relation="lessThanOrEqual" secondItem="rQ4-m8-bhd" secondAttribute="trailing" constant="227.66666666666666" id="5um-VG-cj0"/>
                                     <constraint firstItem="9OG-cA-JcA" firstAttribute="trailing" secondItem="rq6-h6-pEh" secondAttribute="trailing" constant="71" id="A2e-A5-AuG"/>
+                                    <constraint firstItem="rQ4-m8-bhd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9OG-cA-JcA" secondAttribute="leading" id="DTw-xA-Ig3"/>
                                     <constraint firstItem="g4g-Lj-Jdi" firstAttribute="top" secondItem="vDx-uG-yxn" secondAttribute="bottom" constant="33" id="JIH-Po-HvE"/>
                                     <constraint firstItem="9OG-cA-JcA" firstAttribute="trailing" secondItem="KUd-D9-ShX" secondAttribute="trailing" constant="34" id="MIw-aO-AzL"/>
                                     <constraint firstItem="wxz-JT-b5i" firstAttribute="leading" secondItem="9OG-cA-JcA" secondAttribute="leading" constant="72" id="Mst-8C-V0D"/>
                                     <constraint firstItem="rq6-h6-pEh" firstAttribute="top" secondItem="wxz-JT-b5i" secondAttribute="bottom" constant="78" id="NCg-gD-GA3"/>
+                                    <constraint firstItem="9OG-cA-JcA" firstAttribute="trailing" secondItem="fwn-la-hMH" secondAttribute="trailing" constant="36" id="Q0X-72-6eG"/>
                                     <constraint firstItem="KUd-D9-ShX" firstAttribute="top" secondItem="g4g-Lj-Jdi" secondAttribute="bottom" constant="59" id="Q3b-sw-2AU"/>
                                     <constraint firstItem="vDx-uG-yxn" firstAttribute="leading" secondItem="9OG-cA-JcA" secondAttribute="leading" constant="73" id="QHa-8v-j5t"/>
                                     <constraint firstItem="vDx-uG-yxn" firstAttribute="top" secondItem="A36-hm-JdR" secondAttribute="bottom" constant="45" id="QUS-Ww-cj0"/>
                                     <constraint firstItem="A36-hm-JdR" firstAttribute="leading" secondItem="9OG-cA-JcA" secondAttribute="leading" constant="72" id="RlR-mG-i0d"/>
+                                    <constraint firstItem="rQ4-m8-bhd" firstAttribute="leading" secondItem="KUd-D9-ShX" secondAttribute="leading" id="UhH-UN-YD8"/>
                                     <constraint firstItem="A36-hm-JdR" firstAttribute="top" secondItem="rq6-h6-pEh" secondAttribute="bottom" constant="56" id="Ul7-Y4-bwt"/>
+                                    <constraint firstItem="fwn-la-hMH" firstAttribute="top" secondItem="KUd-D9-ShX" secondAttribute="bottom" constant="106" id="cUJ-Pi-Zfo"/>
                                     <constraint firstItem="9OG-cA-JcA" firstAttribute="trailing" secondItem="wxz-JT-b5i" secondAttribute="trailing" constant="71" id="d9H-Cf-4ZP"/>
                                     <constraint firstItem="9OG-cA-JcA" firstAttribute="trailing" secondItem="vDx-uG-yxn" secondAttribute="trailing" constant="71" id="eDg-OY-u5F"/>
                                     <constraint firstItem="rq6-h6-pEh" firstAttribute="leading" secondItem="9OG-cA-JcA" secondAttribute="leading" constant="72" id="ebg-UY-hQe"/>
                                     <constraint firstItem="KUd-D9-ShX" firstAttribute="leading" secondItem="9OG-cA-JcA" secondAttribute="leading" constant="34" id="gcP-Qs-jqf"/>
+                                    <constraint firstAttribute="trailing" secondItem="rQ4-m8-bhd" secondAttribute="trailing" constant="218" id="lfJ-ji-hHd"/>
                                     <constraint firstItem="9OG-cA-JcA" firstAttribute="trailing" secondItem="g4g-Lj-Jdi" secondAttribute="trailing" constant="70" id="nVW-Mk-cEG"/>
                                     <constraint firstItem="wxz-JT-b5i" firstAttribute="top" secondItem="9OG-cA-JcA" secondAttribute="top" constant="8" id="neF-j7-11P"/>
+                                    <constraint firstAttribute="bottom" secondItem="rQ4-m8-bhd" secondAttribute="bottom" constant="68" id="s0c-jk-TR6"/>
                                     <constraint firstItem="g4g-Lj-Jdi" firstAttribute="leading" secondItem="9OG-cA-JcA" secondAttribute="leading" constant="73" id="woA-2W-ZfI"/>
+                                    <constraint firstItem="9OG-cA-JcA" firstAttribute="bottom" secondItem="fwn-la-hMH" secondAttribute="bottom" constant="63" id="yGL-Xs-epg"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="14a-iv-0QX"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="9OG-cA-JcA"/>
@@ -104,13 +126,19 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="52Q-3e-s3h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ibF-CY-rDz"/>
+                            <constraint firstItem="52Q-3e-s3h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oio-ff-POK"/>
+                        </constraints>
                     </view>
                     <size key="freeformSize" width="428" height="926"/>
                     <connections>
                         <outlet property="datePicker" destination="KUd-D9-ShX" id="32u-lW-Qzg"/>
+                        <outlet property="doneBotton" destination="g4g-Lj-Jdi" id="tyk-Of-DxS"/>
                         <outlet property="label" destination="rq6-h6-pEh" id="VQF-mc-S02"/>
                         <outlet property="segmentedControl" destination="wxz-JT-b5i" id="tpI-30-H2v"/>
                         <outlet property="slider" destination="A36-hm-JdR" id="x9t-OU-3KN"/>
+                        <outlet property="switchLabel" destination="rQ4-m8-bhd" id="onx-3B-fQZ"/>
                         <outlet property="textField" destination="vDx-uG-yxn" id="E8j-Hc-T4z"/>
                     </connections>
                 </viewController>

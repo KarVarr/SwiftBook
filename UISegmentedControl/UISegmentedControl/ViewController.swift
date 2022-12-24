@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var switchLabel: UILabel!
+    @IBOutlet weak var doneBotton: UIButton!
+    
     
     
     override func viewDidLoad() {
@@ -103,6 +106,20 @@ class ViewController: UIViewController {
         label.text = dateValue
         
        
+    }
+    @IBAction func switchAction(_ sender: UISwitch) {
+        segmentedControl.isHidden = !segmentedControl.isHidden
+        label.isHidden = !label.isHidden
+        slider.isHidden = !slider.isHidden
+        textField.isHidden = !textField.isHidden
+        datePicker.isHidden = !datePicker.isHidden
+        doneBotton.isHidden = !doneBotton.isHidden
+        
+        if sender.isOn {
+            switchLabel.text = "Show All elements"
+        } else {
+            switchLabel.text = "Hide all elements!"
+        }
     }
     
 }
