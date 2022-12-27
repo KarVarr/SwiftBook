@@ -13,6 +13,7 @@
 		17ABCDF0295B72C2009AC564 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17ABCDEF295B72C2009AC564 /* Assets.xcassets */; };
 		17ABCDF3295B72C2009AC564 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17ABCDF1295B72C2009AC564 /* LaunchScreen.storyboard */; };
 		17ABCDFB295B730E009AC564 /* TrackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ABCDFA295B730E009AC564 /* TrackList.swift */; };
+		17ABCE01295B7E2E009AC564 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ABCE00295B7E2E009AC564 /* DetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		17ABCDF2295B72C2009AC564 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17ABCDF4295B72C2009AC564 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17ABCDFA295B730E009AC564 /* TrackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackList.swift; sourceTree = "<group>"; };
+		17ABCE00295B7E2E009AC564 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				17ABCDE6295B72C0009AC564 /* AppDelegate.swift */,
 				17ABCDE8295B72C0009AC564 /* SceneDelegate.swift */,
 				17ABCDEC295B72C0009AC564 /* Main.storyboard */,
+				17ABCE00295B7E2E009AC564 /* DetailVC.swift */,
 				17ABCDFA295B730E009AC564 /* TrackList.swift */,
 				17ABCDEF295B72C2009AC564 /* Assets.xcassets */,
 				17ABCDF1295B72C2009AC564 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17ABCDFB295B730E009AC564 /* TrackList.swift in Sources */,
+				17ABCE01295B7E2E009AC564 /* DetailVC.swift in Sources */,
 				17ABCDE7295B72C0009AC564 /* AppDelegate.swift in Sources */,
 				17ABCDE9295B72C0009AC564 /* SceneDelegate.swift in Sources */,
 			);
