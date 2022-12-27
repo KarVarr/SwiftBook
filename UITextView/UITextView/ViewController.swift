@@ -11,16 +11,18 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
-    
     @IBOutlet weak var textViewBottonConstrain: NSLayoutConstraint!
-    
     @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         textView.delegate = self
+        textView.isHidden = true
+        textView.alpha = 0
         
         textView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 17)
         textView.backgroundColor = self.view.backgroundColor
@@ -34,6 +36,13 @@ class ViewController: UIViewController {
         stepper.backgroundColor = .brown
         stepper.layer.cornerRadius = 10
         
+        
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = .red
+        activityIndicator.startAnimating()
+        activityIndicator.style = .large
+        self.view.isUserInteractionEnabled = false
+        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(updateTextView(notification:)),
                                                name: UIResponder.keyboardWillShowNotification,
@@ -45,6 +54,14 @@ class ViewController: UIViewController {
         
         countLabel.text = "\(textView.text.count)"
         
+        
+        UIView.animate(withDuration: 0, delay: 3, animations: {
+            self.textView.alpha = 1
+        }) {(finished) in
+            self.activityIndicator.stopAnimating()
+            self.textView.isHidden = false
+            self.view.isUserInteractionEnabled = true
+        }
     }
     
     
