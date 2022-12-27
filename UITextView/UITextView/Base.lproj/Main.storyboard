@@ -39,6 +39,9 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vEs-My-hi5">
                                 <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MQG-QX-edk">
+                                <rect key="frame" x="16" y="193" width="361" height="4"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
@@ -49,16 +52,21 @@
                             <constraint firstItem="vEs-My-hi5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4e2-wB-Dsa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mvE-WA-DaG" secondAttribute="trailing" constant="16" id="6WB-dK-kYX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mvE-WA-DaG" secondAttribute="bottom" constant="173" id="8z0-Vo-nIj"/>
+                            <constraint firstItem="MQG-QX-edk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="AJb-UN-K1U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MQG-QX-edk" secondAttribute="trailing" constant="16" id="DIm-hK-H7s"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eSb-lI-nmn" secondAttribute="trailing" constant="143" id="N5K-Lz-qWz"/>
+                            <constraint firstItem="MQG-QX-edk" firstAttribute="top" secondItem="iOT-dS-B0B" secondAttribute="bottom" constant="33" id="hdd-Df-LaJ"/>
                             <constraint firstItem="iOT-dS-B0B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="69" id="iAq-M9-uF9"/>
                             <constraint firstItem="mvE-WA-DaG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lt5-AE-J8A"/>
                             <constraint firstItem="mvE-WA-DaG" firstAttribute="top" secondItem="eSb-lI-nmn" secondAttribute="bottom" constant="38" id="nft-Uc-NhM"/>
+                            <constraint firstItem="MQG-QX-edk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="py3-M0-jwp"/>
                             <constraint firstItem="eSb-lI-nmn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="rvq-w1-gHj"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="vEs-My-hi5" id="m6O-Lz-QBt"/>
                         <outlet property="countLabel" destination="eSb-lI-nmn" id="Shd-am-Gol"/>
+                        <outlet property="progressView" destination="MQG-QX-edk" id="JrJ-cT-3c5"/>
                         <outlet property="stepper" destination="iOT-dS-B0B" id="ye5-NG-sMc"/>
                         <outlet property="textView" destination="mvE-WA-DaG" id="Qlv-3m-BlV"/>
                         <outlet property="textViewBottonConstrain" destination="8z0-Vo-nIj" id="Tjh-rM-dqd"/>
