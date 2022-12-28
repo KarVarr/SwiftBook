@@ -13,6 +13,7 @@
 		178BF67C295C8AF4004F3A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 178BF67B295C8AF4004F3A88 /* Assets.xcassets */; };
 		178BF67F295C8AF4004F3A88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 178BF67D295C8AF4004F3A88 /* LaunchScreen.storyboard */; };
 		178BF687295C8B2F004F3A88 /* PreviewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178BF686295C8B2F004F3A88 /* PreviewPage.swift */; };
+		178BF689295C8C1C004F3A88 /* ArtCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178BF688295C8C1C004F3A88 /* ArtCoverCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		178BF67E295C8AF4004F3A88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		178BF680295C8AF4004F3A88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		178BF686295C8B2F004F3A88 /* PreviewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPage.swift; sourceTree = "<group>"; };
+		178BF688295C8C1C004F3A88 /* ArtCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtCoverCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				178BF672295C8AF3004F3A88 /* AppDelegate.swift */,
 				178BF674295C8AF3004F3A88 /* SceneDelegate.swift */,
 				178BF678295C8AF3004F3A88 /* Main.storyboard */,
+				178BF688295C8C1C004F3A88 /* ArtCoverCell.swift */,
 				178BF686295C8B2F004F3A88 /* PreviewPage.swift */,
 				178BF67B295C8AF4004F3A88 /* Assets.xcassets */,
 				178BF67D295C8AF4004F3A88 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				178BF687295C8B2F004F3A88 /* PreviewPage.swift in Sources */,
 				178BF673295C8AF3004F3A88 /* AppDelegate.swift in Sources */,
 				178BF675295C8AF3004F3A88 /* SceneDelegate.swift in Sources */,
+				178BF689295C8C1C004F3A88 /* ArtCoverCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
