@@ -16,44 +16,147 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MTv-tJ-Xrf">
-                                <rect key="frame" x="16" y="59" width="361" height="124"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemCyanColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5dc-Ak-NbW">
-                                <rect key="frame" x="16" y="191" width="361" height="124"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemCyanColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vs2-ro-6ZP">
-                                <rect key="frame" x="16" y="694" width="361" height="124"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemCyanColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OOK-Rf-Zd3">
-                                <rect key="frame" x="16" y="562" width="361" height="124"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemCyanColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yro-sO-Kuu">
-                                <rect key="frame" x="16" y="430" width="361" height="124"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemCyanColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hqu-jW-Yav">
-                                <rect key="frame" x="16" y="323" width="165" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemCyanColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yjG-TJ-ZwO">
-                                <rect key="frame" x="212" y="323" width="165" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemCyanColor"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Plv-bo-Yqd">
+                                <rect key="frame" x="16" y="59" width="361" height="759"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="F0b-e2-1ML">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="245"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MTv-tJ-Xrf">
+                                                <rect key="frame" x="0.0" y="0.0" width="361" height="120"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="True Wallpaper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gV3-SE-l4O">
+                                                        <rect key="frame" x="0.0" y="0.0" width="361" height="120"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="29"/>
+                                                        <color key="textColor" systemColor="systemYellowColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="gV3-SE-l4O" secondAttribute="trailing" id="RWZ-dk-qNn"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gV3-SE-l4O" secondAttribute="bottom" id="VCi-yM-JOq"/>
+                                                    <constraint firstItem="gV3-SE-l4O" firstAttribute="top" secondItem="MTv-tJ-Xrf" secondAttribute="top" id="e4c-4G-bkR"/>
+                                                    <constraint firstItem="gV3-SE-l4O" firstAttribute="leading" secondItem="MTv-tJ-Xrf" secondAttribute="leading" id="uop-jE-NMI"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dc-Ak-NbW">
+                                                <rect key="frame" x="0.0" y="125" width="361" height="120"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alberto Ruiz - 7 Elements (Original Mix)" translatesAutoresizingMaskIntoConstraints="NO" id="0RE-Hg-E7l">
+                                                        <rect key="frame" x="0.0" y="0.0" width="162" height="120"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="162" id="F7R-aD-cgd"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dave Wincent - Red Eye (Original Mix)" translatesAutoresizingMaskIntoConstraints="NO" id="A3v-x0-Xke">
+                                                        <rect key="frame" x="199" y="0.0" width="162" height="120"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="A3v-x0-Xke" firstAttribute="top" secondItem="5dc-Ak-NbW" secondAttribute="top" id="ApJ-a5-QCe"/>
+                                                    <constraint firstItem="A3v-x0-Xke" firstAttribute="leading" secondItem="0RE-Hg-E7l" secondAttribute="trailing" constant="37" id="B0S-fH-mY3"/>
+                                                    <constraint firstItem="0RE-Hg-E7l" firstAttribute="leading" secondItem="5dc-Ak-NbW" secondAttribute="leading" id="CQZ-EB-ZtB"/>
+                                                    <constraint firstAttribute="bottom" secondItem="0RE-Hg-E7l" secondAttribute="bottom" id="Htn-j2-73t"/>
+                                                    <constraint firstAttribute="trailing" secondItem="A3v-x0-Xke" secondAttribute="trailing" id="aWx-Ss-CLM"/>
+                                                    <constraint firstItem="0RE-Hg-E7l" firstAttribute="top" secondItem="5dc-Ak-NbW" secondAttribute="top" id="w8s-gb-K8b"/>
+                                                    <constraint firstAttribute="bottom" secondItem="A3v-x0-Xke" secondAttribute="bottom" id="zwt-ha-gPL"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TB2-Vi-ZOj">
+                                        <rect key="frame" x="0.0" y="257" width="361" height="245"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqu-jW-Yav">
+                                                <rect key="frame" x="0.0" y="0.0" width="178" height="245"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="E-Spectro - End Station (Original Mix)" translatesAutoresizingMaskIntoConstraints="NO" id="PVo-HU-QvT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="178" height="245"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="PVo-HU-QvT" secondAttribute="bottom" id="XhV-4B-PV4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="PVo-HU-QvT" secondAttribute="trailing" id="Z9d-sr-R0X"/>
+                                                    <constraint firstItem="PVo-HU-QvT" firstAttribute="leading" secondItem="hqu-jW-Yav" secondAttribute="leading" id="bE4-iQ-jBe"/>
+                                                    <constraint firstItem="PVo-HU-QvT" firstAttribute="top" secondItem="hqu-jW-Yav" secondAttribute="top" id="rqd-Q6-mmU"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjG-TJ-ZwO">
+                                                <rect key="frame" x="183" y="0.0" width="178" height="245"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Edna Ann - Phasma (Konstantin Yoodza Remix)" translatesAutoresizingMaskIntoConstraints="NO" id="Ee9-3j-4JJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="178" height="245"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Ee9-3j-4JJ" secondAttribute="trailing" id="6CT-RG-APi"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Ee9-3j-4JJ" secondAttribute="bottom" id="Pom-Uv-XdQ"/>
+                                                    <constraint firstItem="Ee9-3j-4JJ" firstAttribute="leading" secondItem="yjG-TJ-ZwO" secondAttribute="leading" id="Rur-KS-Dh7"/>
+                                                    <constraint firstItem="Ee9-3j-4JJ" firstAttribute="top" secondItem="yjG-TJ-ZwO" secondAttribute="top" id="Uk7-jH-P4n"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yfp-r0-eEn">
+                                        <rect key="frame" x="0.0" y="514" width="361" height="245"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yro-sO-Kuu">
+                                                <rect key="frame" x="0.0" y="0.0" width="361" height="78.333333333333329"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ilija Djokovic - Delusion (Original Mix)" translatesAutoresizingMaskIntoConstraints="NO" id="waa-OF-UgX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="278" height="78"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="waa-OF-UgX" firstAttribute="top" secondItem="yro-sO-Kuu" secondAttribute="top" id="BBY-fX-bEE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="waa-OF-UgX" secondAttribute="trailing" constant="83" id="h9S-F8-p7g"/>
+                                                    <constraint firstItem="waa-OF-UgX" firstAttribute="leading" secondItem="yro-sO-Kuu" secondAttribute="leading" id="kOr-qi-DoV"/>
+                                                    <constraint firstAttribute="bottom" secondItem="waa-OF-UgX" secondAttribute="bottom" constant="0.33000000000000002" id="oBo-Bk-ILo"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOK-Rf-Zd3">
+                                                <rect key="frame" x="0.0" y="83.333333333333371" width="361" height="78.333333333333314"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lane 8 - Fingerprint (Original Mix)" translatesAutoresizingMaskIntoConstraints="NO" id="aCe-3y-mBb">
+                                                        <rect key="frame" x="83" y="0.0" width="278" height="78"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="aCe-3y-mBb" firstAttribute="leading" secondItem="OOK-Rf-Zd3" secondAttribute="leading" constant="83" id="0m2-db-mQL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aCe-3y-mBb" secondAttribute="trailing" id="FRw-aN-6WY"/>
+                                                    <constraint firstAttribute="bottom" secondItem="aCe-3y-mBb" secondAttribute="bottom" constant="0.33000000000000002" id="Qz3-aA-hmw"/>
+                                                    <constraint firstItem="aCe-3y-mBb" firstAttribute="top" secondItem="OOK-Rf-Zd3" secondAttribute="top" id="b48-r7-bSM"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vs2-ro-6ZP">
+                                                <rect key="frame" x="0.0" y="166.66666666666663" width="361" height="78.333333333333314"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mac Vaughn - Pink Is My Favorite Color (Alex Stein Remix)" translatesAutoresizingMaskIntoConstraints="NO" id="fRg-SL-vuS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="278" height="78"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="fRg-SL-vuS" secondAttribute="bottom" constant="0.33000000000000002" id="6n2-zN-LaE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fRg-SL-vuS" secondAttribute="trailing" constant="83" id="Kvg-gH-Z9J"/>
+                                                    <constraint firstItem="fRg-SL-vuS" firstAttribute="top" secondItem="Vs2-ro-6ZP" secondAttribute="top" id="rsG-xo-ZWm"/>
+                                                    <constraint firstItem="fRg-SL-vuS" firstAttribute="leading" secondItem="Vs2-ro-6ZP" secondAttribute="leading" id="tla-DR-fgP"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Plv-bo-Yqd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jvb-IO-xVn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Plv-bo-Yqd" secondAttribute="trailing" constant="16" id="kQZ-sd-PfK"/>
+                            <constraint firstItem="Plv-bo-Yqd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="rQg-ng-Lhp"/>
+                            <constraint firstItem="Plv-bo-Yqd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="woE-Ni-evG"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -62,11 +165,18 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="Alberto Ruiz - 7 Elements (Original Mix)" width="640" height="640"/>
+        <image name="Dave Wincent - Red Eye (Original Mix)" width="600" height="600"/>
+        <image name="E-Spectro - End Station (Original Mix)" width="1200" height="1200"/>
+        <image name="Edna Ann - Phasma (Konstantin Yoodza Remix)" width="600" height="600"/>
+        <image name="Ilija Djokovic - Delusion (Original Mix)" width="500" height="500"/>
+        <image name="Lane 8 - Fingerprint (Original Mix)" width="600" height="600"/>
+        <image name="Mac Vaughn - Pink Is My Favorite Color (Alex Stein Remix)" width="500" height="500"/>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
