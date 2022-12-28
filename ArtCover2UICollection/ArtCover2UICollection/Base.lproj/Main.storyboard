@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,6 +44,7 @@
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="coverImageView" destination="BNw-aA-Rji" id="GKi-JL-f05"/>
+                                    <segue destination="I4W-za-ldW" kind="show" identifier="DetailView" id="JaK-ij-dSr"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -56,10 +58,53 @@
             </objects>
             <point key="canvasLocation" x="-256" y="3"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="56D-ee-lX4">
+            <objects>
+                <viewController id="I4W-za-ldW" customClass="DetailViewController" customModule="ArtCover2UICollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x3R-Q2-Pkc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vOF-WZ-41L">
+                                <rect key="frame" x="0.0" y="59" width="393" height="594.33333333333337"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzU-K2-Fdd">
+                                <rect key="frame" x="16" y="684.33333333333337" width="361" height="31.666666666666629"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="25"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YbW-Xt-ysX"/>
+                        <color key="backgroundColor" red="0.92673440171831734" green="0.93970959595959591" blue="0.92467343082478937" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="dzU-K2-Fdd" firstAttribute="leading" secondItem="YbW-Xt-ysX" secondAttribute="leading" constant="16" id="UJg-OC-o64"/>
+                            <constraint firstItem="dzU-K2-Fdd" firstAttribute="top" secondItem="vOF-WZ-41L" secondAttribute="bottom" constant="31" id="VUC-Mx-rJ8"/>
+                            <constraint firstItem="YbW-Xt-ysX" firstAttribute="trailing" secondItem="dzU-K2-Fdd" secondAttribute="trailing" constant="16" id="czn-4l-o5A"/>
+                            <constraint firstItem="vOF-WZ-41L" firstAttribute="trailing" secondItem="YbW-Xt-ysX" secondAttribute="trailing" id="knf-Ka-nEt"/>
+                            <constraint firstItem="YbW-Xt-ysX" firstAttribute="bottom" secondItem="dzU-K2-Fdd" secondAttribute="bottom" constant="67" id="ksh-Rm-BIb"/>
+                            <constraint firstItem="vOF-WZ-41L" firstAttribute="top" secondItem="YbW-Xt-ysX" secondAttribute="top" id="msD-5v-pj9"/>
+                            <constraint firstItem="vOF-WZ-41L" firstAttribute="leading" secondItem="YbW-Xt-ysX" secondAttribute="leading" id="t0K-u4-LLu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3ta-NT-Oyd"/>
+                    <connections>
+                        <outlet property="imageView" destination="vOF-WZ-41L" id="Bqg-B9-33V"/>
+                        <outlet property="labelView" destination="dzU-K2-Fdd" id="rkx-3P-Id3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qO9-FI-qA7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="527.48091603053433" y="2.8169014084507045"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

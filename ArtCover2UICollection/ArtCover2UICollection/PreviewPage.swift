@@ -52,6 +52,16 @@ class PreviewPage: UICollectionViewController {
     
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailView" {
+            if let indexPath = self.collectionView.indexPathsForSelectedItems?.first {
+                let detail = segue.destination as! DetailViewController
+                detail.nameOfImage = imageNameArray[indexPath.row]
+                
+            }
+        }
+    }
 
  
 
