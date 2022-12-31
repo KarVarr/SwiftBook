@@ -36,6 +36,10 @@
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WgG-MF-n1B">
                                 <rect key="frame" x="75" y="59" width="243" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="243" id="5aT-hu-S6m"/>
+                                    <constraint firstAttribute="height" constant="34" id="VzZ-EO-d4N"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
