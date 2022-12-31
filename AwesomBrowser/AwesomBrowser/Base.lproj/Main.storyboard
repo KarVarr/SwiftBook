@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AwesomBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-G1-Uhb">
+                                <rect key="frame" x="0.0" y="123" width="393" height="695"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CmO-sN-wBT">
+                                <rect key="frame" x="326" y="58" width="51" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.forward" catalog="system">
+                                    <color key="baseForegroundColor" systemColor="systemTealColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="forwardButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O6x-SN-A60"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WgG-MF-n1B">
+                                <rect key="frame" x="75" y="59" width="243" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWV-Oa-WON">
+                                <rect key="frame" x="16" y="58" width="51" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.backward" catalog="system">
+                                    <color key="baseForegroundColor" red="1" green="0.52120530610000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zzF-Xi-9h2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CmO-sN-wBT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="58" id="1Nb-Mn-doU"/>
+                            <constraint firstItem="WgG-MF-n1B" firstAttribute="leading" secondItem="tWV-Oa-WON" secondAttribute="trailing" constant="8" symbolic="YES" id="5GE-Pg-Vzw"/>
+                            <constraint firstItem="Cbc-G1-Uhb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DdU-3s-YYz"/>
+                            <constraint firstItem="Cbc-G1-Uhb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QuS-o9-x0b"/>
+                            <constraint firstItem="CmO-sN-wBT" firstAttribute="leading" secondItem="WgG-MF-n1B" secondAttribute="trailing" constant="8" symbolic="YES" id="ToG-ve-7b1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CmO-sN-wBT" secondAttribute="trailing" constant="16" id="VBZ-rZ-Njc"/>
+                            <constraint firstItem="WgG-MF-n1B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Y1i-8Z-4oK"/>
+                            <constraint firstItem="tWV-Oa-WON" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="aWH-EO-HGx"/>
+                            <constraint firstItem="Cbc-G1-Uhb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cyZ-wj-W5Q"/>
+                            <constraint firstItem="Cbc-G1-Uhb" firstAttribute="top" secondItem="CmO-sN-wBT" secondAttribute="bottom" constant="30" id="k2f-tZ-wY4"/>
+                            <constraint firstItem="tWV-Oa-WON" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="58" id="kt3-05-ttt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="tWV-Oa-WON" id="FGt-eC-y37"/>
+                        <outlet property="forwardButton" destination="CmO-sN-wBT" id="nXJ-L2-6WL"/>
+                        <outlet property="urlTextField" destination="WgG-MF-n1B" id="eUf-sT-pzJ"/>
+                        <outlet property="webView" destination="Cbc-G1-Uhb" id="zov-GV-CBG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75.572519083969468" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="104"/>
+        <image name="arrowshape.turn.up.forward" catalog="system" width="128" height="104"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
