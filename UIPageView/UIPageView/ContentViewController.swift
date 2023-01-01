@@ -22,10 +22,13 @@ class ContentViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+       
+        
+        
         presentTextLabel.text = presentText
         emojiLabel.text = emoji
-        pageControl.currentPage = currentPage
         pageControl.numberOfPages = numberOfPages
+        pageControl.currentPage = currentPage
     }
     
     
