@@ -35,7 +35,9 @@ class PageViewController: UIPageViewController {
     func showViewControllerAtIndex(_ index: Int) -> ContentViewController? {
         
         guard index >= 0 else {return nil}
-        guard index < presentsScreenContent.count  else {
+        guard index < presentsScreenContent.count - 1 else {
+            let userDefault = UserDefaults.standard
+            userDefault.set(true, forKey: "Done")
             dismiss(animated: true)
             return nil
             

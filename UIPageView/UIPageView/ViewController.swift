@@ -15,9 +15,15 @@ class ViewController: UIViewController {
     }
 
     func startPresentation () {
-        if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "PageViewController") as? PageViewController {
-            present(pageViewController, animated: true)
+        let userDefault = UserDefaults.standard
+        let presentationWasViewed = userDefault.bool(forKey: "Done")
+        if presentationWasViewed == false {
+            
+            if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "PageViewController") as? PageViewController {
+                present(pageViewController, animated: true)
+            }
         }
+        
     }
 
 }
