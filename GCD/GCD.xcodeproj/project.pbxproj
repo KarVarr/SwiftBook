@@ -13,6 +13,8 @@
 		17D4BAFE2A4B425600BB1376 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17D4BAFD2A4B425600BB1376 /* Assets.xcassets */; };
 		17D4BB012A4B425600BB1376 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17D4BAFF2A4B425600BB1376 /* LaunchScreen.storyboard */; };
 		17D4BB0D2A4B445300BB1376 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D4BB0C2A4B445300BB1376 /* ButtonView.swift */; };
+		17D4BB0F2A4B45F500BB1376 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D4BB0E2A4B45F500BB1376 /* SecondViewController.swift */; };
+		17D4BB112A4B49DE00BB1376 /* ImageVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D4BB102A4B49DE00BB1376 /* ImageVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		17D4BB002A4B425600BB1376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17D4BB022A4B425600BB1376 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17D4BB0C2A4B445300BB1376 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		17D4BB0E2A4B45F500BB1376 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		17D4BB102A4B49DE00BB1376 /* ImageVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVIew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				17D4BAF82A4B425400BB1376 /* ViewController.swift */,
+				17D4BB0E2A4B45F500BB1376 /* SecondViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -95,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				17D4BB0C2A4B445300BB1376 /* ButtonView.swift */,
+				17D4BB102A4B49DE00BB1376 /* ImageVIew.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,9 +175,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D4BB112A4B49DE00BB1376 /* ImageVIew.swift in Sources */,
 				17D4BAF92A4B425400BB1376 /* ViewController.swift in Sources */,
 				17D4BAF52A4B425400BB1376 /* AppDelegate.swift in Sources */,
 				17D4BB0D2A4B445300BB1376 /* ButtonView.swift in Sources */,
+				17D4BB0F2A4B45F500BB1376 /* SecondViewController.swift in Sources */,
 				17D4BAF72A4B425400BB1376 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

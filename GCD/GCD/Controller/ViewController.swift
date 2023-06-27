@@ -29,6 +29,8 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        customButton.button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
     func layout() {
@@ -39,6 +41,12 @@ class ViewController: UIViewController {
             btn.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             btn.widthAnchor.constraint(equalToConstant: 100),
         ])
+    }
+    
+    
+    @objc func buttonTapped() {
+        let secondVC = SecondViewController()
+        self.navigationController?.pushViewController(secondVC, animated: true)
     }
 
 
