@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let customButton = ButtonView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,15 +20,25 @@ class ViewController: UIViewController {
     }
     
     func addView() {
-        
+        view.addSubview(customButton.button)
     }
     
     func settings() {
         title = "GCD Application Test"
+        
+        view.backgroundColor = .white
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func layout() {
+        let btn = customButton.button
         
+        NSLayoutConstraint.activate([
+            btn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            btn.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            btn.widthAnchor.constraint(equalToConstant: 100),
+        ])
     }
 
 
