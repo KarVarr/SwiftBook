@@ -13,6 +13,8 @@ class ImageView {
         image.translatesAutoresizingMaskIntoConstraints = false
         image.backgroundColor = .lightGray
         image.image = UIImage(systemName: "plus")
+        image.sizeToFit()
+        image.contentMode = .scaleAspectFill
         return image
     }()
 }
