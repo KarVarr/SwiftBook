@@ -15,6 +15,7 @@
 		17D4BB0D2A4B445300BB1376 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D4BB0C2A4B445300BB1376 /* ButtonView.swift */; };
 		17D4BB0F2A4B45F500BB1376 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D4BB0E2A4B45F500BB1376 /* SecondViewController.swift */; };
 		17D4BB112A4B49DE00BB1376 /* ImageVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D4BB102A4B49DE00BB1376 /* ImageVIew.swift */; };
+		17D4BB132A4B53D700BB1376 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D4BB122A4B53D700BB1376 /* ActivityIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		17D4BB0C2A4B445300BB1376 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		17D4BB0E2A4B45F500BB1376 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		17D4BB102A4B49DE00BB1376 /* ImageVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVIew.swift; sourceTree = "<group>"; };
+		17D4BB122A4B53D700BB1376 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				17D4BB0C2A4B445300BB1376 /* ButtonView.swift */,
 				17D4BB102A4B49DE00BB1376 /* ImageVIew.swift */,
+				17D4BB122A4B53D700BB1376 /* ActivityIndicatorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				17D4BAF92A4B425400BB1376 /* ViewController.swift in Sources */,
 				17D4BAF52A4B425400BB1376 /* AppDelegate.swift in Sources */,
 				17D4BB0D2A4B445300BB1376 /* ButtonView.swift in Sources */,
+				17D4BB132A4B53D700BB1376 /* ActivityIndicatorView.swift in Sources */,
 				17D4BB0F2A4B45F500BB1376 /* SecondViewController.swift in Sources */,
 				17D4BAF72A4B425400BB1376 /* SceneDelegate.swift in Sources */,
 			);

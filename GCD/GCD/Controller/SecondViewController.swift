@@ -9,6 +9,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
     let mainImage = ImageView()
+    let activityIndicator = ActivityIndicatorView()
     
     fileprivate var imageURL: URL?
     fileprivate var image: UIImage? {
@@ -17,6 +18,8 @@ class SecondViewController: UIViewController {
         }
         
         set {
+            activityIndicator.indicator.startAnimating()
+            activityIndicator.indicator.isHidden = true
             mainImage.customImage.image = newValue
         }
     }
@@ -33,6 +36,7 @@ class SecondViewController: UIViewController {
     
     func addView() {
         view.addSubview(mainImage.customImage)
+        view.addSubview(activityIndicator.indicator)
     }
     
     func settings() {
@@ -47,20 +51,33 @@ class SecondViewController: UIViewController {
     
     func layout() {
         let image = mainImage.customImage
+        let indicator = activityIndicator.indicator
         
         NSLayoutConstraint.activate([
             image.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             image.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             image.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             image.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            image.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)
+            image.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5),
+            
+            indicator.centerXAnchor.constraint(equalTo: image.centerXAnchor),
+            indicator.centerYAnchor.constraint(equalTo: image.centerYAnchor),
         ])
     }
     
     fileprivate func fetchImage() {
-        imageURL = URL(string: "https://images.hdqwalls.com/wallpapers/moon-astrophotography-4k-sc.jpg")
-        guard let url = imageURL, let imageData = try? Data(contentsOf: url) else { return }
-        self.image = UIImage(data: imageData)
+        imageURL = URL(string: "https://cdn.mos.cms.futurecdn.net/KAg9W8sCj6nVSMcVjQe42d-970-80.jpg.webp")
+        activityIndicator.indicator.isHidden = false
+        activityIndicator.indicator.startAnimating()
+        
+        let queue = DispatchQueue.global(qos: .utility)
+        queue.async {
+            guard let url = self.imageURL, let imageData = try? Data(contentsOf: url) else { return }
+            DispatchQueue.main.async {
+                self.image = UIImage(data: imageData)
+            }
+            
+        }
     }
     
     
