@@ -32,6 +32,9 @@ class SecondViewController: UIViewController {
         layout()
         
         fetchImage()
+        delay(3) {
+            self.loginAlert()
+        }
     }
     
     func addView() {
@@ -63,6 +66,12 @@ class SecondViewController: UIViewController {
             indicator.centerXAnchor.constraint(equalTo: image.centerXAnchor),
             indicator.centerYAnchor.constraint(equalTo: image.centerYAnchor),
         ])
+    }
+    
+    fileprivate func delay(_ delay: Int, closure: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(delay)) {
+            closure()
+        }
     }
     
     fileprivate func loginAlert() {
