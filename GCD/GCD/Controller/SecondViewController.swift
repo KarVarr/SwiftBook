@@ -18,7 +18,7 @@ class SecondViewController: UIViewController {
         }
         
         set {
-            activityIndicator.indicator.startAnimating()
+            activityIndicator.indicator.stopAnimating()
             activityIndicator.indicator.isHidden = true
             mainImage.customImage.image = newValue
         }
@@ -65,8 +65,29 @@ class SecondViewController: UIViewController {
         ])
     }
     
+    fileprivate func loginAlert() {
+        let ac = UIAlertController(title: "Registered?" , message: "Enter your username and password", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        ac.addAction(okAction)
+        ac.addAction(cancelAction)
+        
+        ac.addTextField { (usernameTF) in
+            usernameTF.placeholder = "Enter username"
+        }
+        
+        ac.addTextField { (userPasswordTF) in
+            userPasswordTF.placeholder = "Enter password"
+            userPasswordTF.isSecureTextEntry = true
+        }
+        
+        present(ac, animated: true)
+    }
+    
     fileprivate func fetchImage() {
-        imageURL = URL(string: "https://cdn.mos.cms.futurecdn.net/KAg9W8sCj6nVSMcVjQe42d-970-80.jpg.webp")
+        imageURL = URL(string: "https://free4kwallpapers.com/uploads/originals/2022/04/20/rubiks-cube-digital-art-wallpaper.jpg")
         activityIndicator.indicator.isHidden = false
         activityIndicator.indicator.startAnimating()
         
