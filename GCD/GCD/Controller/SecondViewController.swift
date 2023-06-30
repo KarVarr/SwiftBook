@@ -72,6 +72,7 @@ class SecondViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(delay)) {
             closure()
         }
+        
     }
     
     fileprivate func loginAlert() {
