@@ -7,8 +7,10 @@
 
 import UIKit
 
-let LabelView: UILabel = {
-   let label  = UILabel()
-    label.translatesAutoresizingMaskIntoConstraints = false
-    return label
-}()
+class LabelView {
+    let customLabel: UILabel = {
+        let label  = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+}
