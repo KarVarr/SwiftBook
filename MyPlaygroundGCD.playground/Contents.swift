@@ -85,19 +85,52 @@ PlaygroundPage.current.needsIndefiniteExecution = true
         
 //MARK: - DispatchGroupItem
 
-let workItem = DispatchWorkItem(qos: .utility, flags: .detached) {
-    print("Perform workitem")
+//let workItem = DispatchWorkItem(qos: .utility, flags: .detached) {
+//    print("Perform workitem")
+//}
+//
+////workItem.perform()
+//let queue = DispatchQueue(label: "ru.swiftbook", attributes: .concurrent ,target: DispatchQueue.global(qos: .userInitiated))
+//
+//queue.asyncAfter(deadline: .now() + 1, execute: workItem)
+//
+//workItem.notify(queue: .main) {
+//    print("workitem is complete ")
+//}
+//
+//workItem.isCancelled
+//workItem.cancel()
+//workItem.isCancelled
+
+
+//MARK: - DispatchSemaphore
+
+let queue = DispatchQueue(label: "semaphore", attributes: .concurrent)
+
+let semaphore = DispatchSemaphore(value: 0)
+semaphore.signal()
+queue.async {
+    semaphore.wait(timeout: .distantFuture)
+    Thread.sleep(forTimeInterval: 4)
+    print("Block 1 ")
+    semaphore.signal()
 }
 
-//workItem.perform()
-let queue = DispatchQueue(label: "ru.swiftbook", attributes: .concurrent ,target: DispatchQueue.global(qos: .userInitiated))
-
-queue.asyncAfter(deadline: .now() + 1, execute: workItem)
-
-workItem.notify(queue: .main) {
-    print("workitem is complete ")
+queue.async {
+    semaphore.wait(timeout: .distantFuture)
+    Thread.sleep(forTimeInterval: 2)
+    print("Block 2 ")
+    semaphore.signal()
 }
 
-workItem.isCancelled
-workItem.cancel()
-workItem.isCancelled
+queue.async {
+    semaphore.wait(timeout: .distantFuture)
+    print("Block 3 ")
+    semaphore.signal()
+}
+
+queue.async {
+    semaphore.wait(timeout: .distantFuture)
+    print("Block 4 ")
+    semaphore.signal()
+}
