@@ -105,32 +105,52 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 
 //MARK: - DispatchSemaphore
 
-let queue = DispatchQueue(label: "semaphore", attributes: .concurrent)
+//let queue = DispatchQueue(label: "semaphore", attributes: .concurrent)
+//
+//let semaphore = DispatchSemaphore(value: 0)
+//semaphore.signal()
+//queue.async {
+//    semaphore.wait(timeout: .distantFuture)
+//    Thread.sleep(forTimeInterval: 4)
+//    print("Block 1 ")
+//    semaphore.signal()
+//}
+//
+//queue.async {
+//    semaphore.wait(timeout: .distantFuture)
+//    Thread.sleep(forTimeInterval: 2)
+//    print("Block 2 ")
+//    semaphore.signal()
+//}
+//
+//queue.async {
+//    semaphore.wait(timeout: .distantFuture)
+//    print("Block 3 ")
+//    semaphore.signal()
+//}
+//
+//queue.async {
+//    semaphore.wait(timeout: .distantFuture)
+//    print("Block 4 ")
+//    semaphore.signal()
+//}
 
-let semaphore = DispatchSemaphore(value: 0)
-semaphore.signal()
-queue.async {
-    semaphore.wait(timeout: .distantFuture)
-    Thread.sleep(forTimeInterval: 4)
-    print("Block 1 ")
-    semaphore.signal()
+//MARK: - DispatchSource
+var time = 0
+
+let queue = DispatchQueue(label: "source", attributes: .concurrent)
+
+let timer = DispatchSource.makeTimerSource(queue: queue)
+
+timer.schedule(deadline: .now(), repeating: .seconds(1), leeway: .milliseconds(300))
+
+timer.setEventHandler {
+    time += 1
+    print("Time is \(time)")
+}
+    
+timer.setCancelHandler {
+    print("time is canceled")
 }
 
-queue.async {
-    semaphore.wait(timeout: .distantFuture)
-    Thread.sleep(forTimeInterval: 2)
-    print("Block 2 ")
-    semaphore.signal()
-}
-
-queue.async {
-    semaphore.wait(timeout: .distantFuture)
-    print("Block 3 ")
-    semaphore.signal()
-}
-
-queue.async {
-    semaphore.wait(timeout: .distantFuture)
-    print("Block 4 ")
-    semaphore.signal()
-}
+timer.resume()
