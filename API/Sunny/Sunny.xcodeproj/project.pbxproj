@@ -16,6 +16,7 @@
 		17266C7B2A62DEC2008E56DE /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C7A2A62DEC2008E56DE /* ImageView.swift */; };
 		17266C7D2A62DF34008E56DE /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C7C2A62DF34008E56DE /* LabelView.swift */; };
 		17266C7F2A62E23B008E56DE /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C7E2A62E23B008E56DE /* StackView.swift */; };
+		17266C812A62E93E008E56DE /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C802A62E93E008E56DE /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		17266C7A2A62DEC2008E56DE /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		17266C7C2A62DF34008E56DE /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		17266C7E2A62E23B008E56DE /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		17266C802A62E93E008E56DE /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +64,9 @@
 		17266C5E2A62DA80008E56DE /* Sunny */ = {
 			isa = PBXGroup;
 			children = (
+				17266C742A62DB41008E56DE /* Application */,
 				17266C772A62DDFE008E56DE /* Model */,
 				17266C762A62DDF7008E56DE /* View */,
-				17266C742A62DB41008E56DE /* Application */,
 				17266C752A62DDEA008E56DE /* Controller */,
 				17266C732A62DAE0008E56DE /* Resources */,
 			);
@@ -104,6 +106,7 @@
 				17266C7A2A62DEC2008E56DE /* ImageView.swift */,
 				17266C7C2A62DF34008E56DE /* LabelView.swift */,
 				17266C7E2A62E23B008E56DE /* StackView.swift */,
+				17266C802A62E93E008E56DE /* ButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			files = (
 				17266C7B2A62DEC2008E56DE /* ImageView.swift in Sources */,
 				17266C7F2A62E23B008E56DE /* StackView.swift in Sources */,
+				17266C812A62E93E008E56DE /* ButtonView.swift in Sources */,
 				17266C792A62DE54008E56DE /* Cities.swift in Sources */,
 				17266C642A62DA80008E56DE /* ViewController.swift in Sources */,
 				17266C602A62DA80008E56DE /* AppDelegate.swift in Sources */,
