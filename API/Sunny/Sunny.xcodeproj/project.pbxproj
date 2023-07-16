@@ -17,6 +17,7 @@
 		17266C7D2A62DF34008E56DE /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C7C2A62DF34008E56DE /* LabelView.swift */; };
 		17266C7F2A62E23B008E56DE /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C7E2A62E23B008E56DE /* StackView.swift */; };
 		17266C812A62E93E008E56DE /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C802A62E93E008E56DE /* ButtonView.swift */; };
+		17266C842A63C6FD008E56DE /* VC + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C832A63C6FD008E56DE /* VC + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		17266C7C2A62DF34008E56DE /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		17266C7E2A62E23B008E56DE /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		17266C802A62E93E008E56DE /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		17266C832A63C6FD008E56DE /* VC + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		17266C752A62DDEA008E56DE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				17266C822A63C6D0008E56DE /* Extensions */,
 				17266C632A62DA80008E56DE /* ViewController.swift */,
 			);
 			path = Controller;
@@ -117,6 +120,14 @@
 				17266C782A62DE54008E56DE /* Cities.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		17266C822A63C6D0008E56DE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				17266C832A63C6FD008E56DE /* VC + Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 				17266C7B2A62DEC2008E56DE /* ImageView.swift in Sources */,
 				17266C7F2A62E23B008E56DE /* StackView.swift in Sources */,
 				17266C812A62E93E008E56DE /* ButtonView.swift in Sources */,
+				17266C842A63C6FD008E56DE /* VC + Extensions.swift in Sources */,
 				17266C792A62DE54008E56DE /* Cities.swift in Sources */,
 				17266C642A62DA80008E56DE /* ViewController.swift in Sources */,
 				17266C602A62DA80008E56DE /* AppDelegate.swift in Sources */,

@@ -19,10 +19,10 @@ class ViewController: UIViewController {
     let verticalStackView = StackView()
     let horizontalStackView = StackView()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        
         
         addViews()
         settings()
@@ -38,10 +38,12 @@ class ViewController: UIViewController {
         view.addSubview(horizontalStackView.customStackView)
         horizontalStackView.customStackView.addArrangedSubview(cityLabel.customLabel)
         horizontalStackView.customStackView.addArrangedSubview(searchButton.customButton)
-
+        
     }
     
     func settings() {
+        view.backgroundColor = .white
+        
         verticalStackView.customStackView.axis = .vertical
         verticalStackView.customStackView.alignment = .center
         verticalStackView.customStackView.spacing = 30
@@ -62,6 +64,8 @@ class ViewController: UIViewController {
         feelsLikeTemperatureLabel.customLabel.font = UIFont(name: "AppleSDGothicNeo-Light", size: 24)
         
         cityLabel.customLabel.text = city.allCities.randomElement()
+        
+        searchButton.customButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
     }
     
     func layout() {
@@ -80,7 +84,11 @@ class ViewController: UIViewController {
             
         ])
     }
-
-
+    
+    @objc func buttonPressed () {
+        presentSearchAlertController(withTitle: "Enter the name of the city", message: nil, style: .alert)
+    }
+    
+    
 }
 
