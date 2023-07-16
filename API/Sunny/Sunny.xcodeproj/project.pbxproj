@@ -18,6 +18,7 @@
 		17266C7F2A62E23B008E56DE /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C7E2A62E23B008E56DE /* StackView.swift */; };
 		17266C812A62E93E008E56DE /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C802A62E93E008E56DE /* ButtonView.swift */; };
 		17266C842A63C6FD008E56DE /* VC + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C832A63C6FD008E56DE /* VC + Extensions.swift */; };
+		17266C862A63DB43008E56DE /* NetworkWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C852A63DB43008E56DE /* NetworkWeatherManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		17266C7E2A62E23B008E56DE /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		17266C802A62E93E008E56DE /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		17266C832A63C6FD008E56DE /* VC + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC + Extensions.swift"; sourceTree = "<group>"; };
+		17266C852A63DB43008E56DE /* NetworkWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				17266C782A62DE54008E56DE /* Cities.swift */,
+				17266C852A63DB43008E56DE /* NetworkWeatherManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				17266C792A62DE54008E56DE /* Cities.swift in Sources */,
 				17266C642A62DA80008E56DE /* ViewController.swift in Sources */,
 				17266C602A62DA80008E56DE /* AppDelegate.swift in Sources */,
+				17266C862A63DB43008E56DE /* NetworkWeatherManager.swift in Sources */,
 				17266C622A62DA80008E56DE /* SceneDelegate.swift in Sources */,
 				17266C7D2A62DF34008E56DE /* LabelView.swift in Sources */,
 			);
