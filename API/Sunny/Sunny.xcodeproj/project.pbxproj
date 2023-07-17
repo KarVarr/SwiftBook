@@ -21,6 +21,7 @@
 		17266C862A63DB43008E56DE /* NetworkWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C852A63DB43008E56DE /* NetworkWeatherManager.swift */; };
 		17266C882A63DD8D008E56DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C872A63DD8D008E56DE /* Constants.swift */; };
 		17266C8A2A654B3C008E56DE /* CurrentWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C892A654B3C008E56DE /* CurrentWeatherData.swift */; };
+		17266C8C2A6553BA008E56DE /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C8B2A6553BA008E56DE /* CurrentWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		17266C852A63DB43008E56DE /* NetworkWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherManager.swift; sourceTree = "<group>"; };
 		17266C872A63DD8D008E56DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		17266C892A654B3C008E56DE /* CurrentWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherData.swift; sourceTree = "<group>"; };
+		17266C8B2A6553BA008E56DE /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				17266C782A62DE54008E56DE /* Cities.swift */,
 				17266C852A63DB43008E56DE /* NetworkWeatherManager.swift */,
 				17266C892A654B3C008E56DE /* CurrentWeatherData.swift */,
+				17266C8B2A6553BA008E56DE /* CurrentWeather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			files = (
 				17266C7B2A62DEC2008E56DE /* ImageView.swift in Sources */,
 				17266C882A63DD8D008E56DE /* Constants.swift in Sources */,
+				17266C8C2A6553BA008E56DE /* CurrentWeather.swift in Sources */,
 				17266C7F2A62E23B008E56DE /* StackView.swift in Sources */,
 				17266C812A62E93E008E56DE /* ButtonView.swift in Sources */,
 				17266C842A63C6FD008E56DE /* VC + Extensions.swift in Sources */,
