@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     let city = Cities.shared
-    let networkWeatherManager = NetworkWeatherManager()
+    var networkWeatherManager = NetworkWeatherManager()
     
     let backgroundImageView = ImageView()
     let weatherIconImageView = ImageView()
@@ -25,6 +25,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        networkWeatherManager.onCompletion = { [weak self] currentWeather in
+            guard let self = self else { return }
+            self.updateInterfaceWith(weather: currentWeather)
+        }
         networkWeatherManager.fetchCurrentWeather(forCity: "Moscow")
         
         addViews()
@@ -99,12 +104,25 @@ class ViewController: UIViewController {
     }
     
     @objc func buttonPressed() {
-        presentSearchAlertController(withTitle: "Enter the name of the city", message: nil, style: .alert) { city in
+        presentSearchAlertController(withTitle: "Enter the name of the city", message: nil, style: .alert) { [unowned self] city in
             self.networkWeatherManager.fetchCurrentWeather(forCity: city)
         }
     }
     
-  
+    func updateInterfaceWith(weather: CurrentWeather) {
+        DispatchQueue.main.async {
+            self.cityLabel.customLabel.text = weather.cityName
+            self.temperatureLabel.customLabel.text = weather.temperatureString
+            self.feelsLikeTemperatureLabel.customLabel.text = weather.feelsLikeTemperatureString
+            self.weatherIconImageView.customImage.image = UIImage(systemName: weather.systemIconWeather)
+        }
+    }
+    
+    
     
 }
+
+
+
+
 
