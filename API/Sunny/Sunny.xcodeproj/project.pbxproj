@@ -19,6 +19,7 @@
 		17266C812A62E93E008E56DE /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C802A62E93E008E56DE /* ButtonView.swift */; };
 		17266C842A63C6FD008E56DE /* VC + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C832A63C6FD008E56DE /* VC + Extensions.swift */; };
 		17266C862A63DB43008E56DE /* NetworkWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C852A63DB43008E56DE /* NetworkWeatherManager.swift */; };
+		17266C882A63DD8D008E56DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266C872A63DD8D008E56DE /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		17266C802A62E93E008E56DE /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		17266C832A63C6FD008E56DE /* VC + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC + Extensions.swift"; sourceTree = "<group>"; };
 		17266C852A63DB43008E56DE /* NetworkWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherManager.swift; sourceTree = "<group>"; };
+		17266C872A63DD8D008E56DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		17266C732A62DAE0008E56DE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				17266C872A63DD8D008E56DE /* Constants.swift */,
 				17266C682A62DA82008E56DE /* Assets.xcassets */,
 				17266C6A2A62DA82008E56DE /* LaunchScreen.storyboard */,
 				17266C6D2A62DA82008E56DE /* Info.plist */,
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17266C7B2A62DEC2008E56DE /* ImageView.swift in Sources */,
+				17266C882A63DD8D008E56DE /* Constants.swift in Sources */,
 				17266C7F2A62E23B008E56DE /* StackView.swift in Sources */,
 				17266C812A62E93E008E56DE /* ButtonView.swift in Sources */,
 				17266C842A63C6FD008E56DE /* VC + Extensions.swift in Sources */,

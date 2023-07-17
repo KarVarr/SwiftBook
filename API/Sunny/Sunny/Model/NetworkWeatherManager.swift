@@ -8,8 +8,8 @@
 import Foundation
 
 class NetworkWeatherManager {
-    func fetchCurrentWeather() {
-        let urlString = "https://api.openweathermap.org/data/2.5/weather?q=Yerevan&appid=aed181e6001b18bf65079ed785ac0dfe"
+    func fetchCurrentWeather(forCity city: String) {
+        let urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(apiKey)"
         guard let url = URL(string: urlString) else { return }
         
         let session = URLSession(configuration: .default)

@@ -9,7 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     let city = Cities.shared
+    let networkWeatherManager = NetworkWeatherManager()
     
+    let backgroundImageView = ImageView()
     let weatherIconImageView = ImageView()
     let cityLabel = LabelView()
     let temperatureLabel = LabelView()
@@ -23,6 +25,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        networkWeatherManager.fetchCurrentWeather(forCity: "Moscow")
         
         addViews()
         settings()
@@ -30,6 +33,8 @@ class ViewController: UIViewController {
     }
     
     func addViews() {
+        view.addSubview(backgroundImageView.customImage)
+        
         view.addSubview(verticalStackView.customStackView)
         verticalStackView.customStackView.addArrangedSubview(weatherIconImageView.customImage)
         verticalStackView.customStackView.addArrangedSubview(temperatureLabel.customLabel)
@@ -42,11 +47,11 @@ class ViewController: UIViewController {
     }
     
     func settings() {
-        view.backgroundColor = .white
+        backgroundImageView.customImage.image = UIImage(named: "weather")
         
         verticalStackView.customStackView.axis = .vertical
         verticalStackView.customStackView.alignment = .center
-        verticalStackView.customStackView.spacing = 30
+        verticalStackView.customStackView.spacing = 20
         
         horizontalStackView.customStackView.axis = .horizontal
         horizontalStackView.customStackView.alignment = .center
@@ -54,26 +59,34 @@ class ViewController: UIViewController {
         
         
         weatherIconImageView.customImage.image = UIImage(systemName: "sun.min")
+        weatherIconImageView.customImage.tintColor = .white
         
         temperatureLabel.customLabel.text = "25 C"
-        temperatureLabel.customLabel.textColor = .gray
-        temperatureLabel.customLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 64)
+        temperatureLabel.customLabel.textColor = .white
+        temperatureLabel.customLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 74)
         
         feelsLikeTemperatureLabel.customLabel.text = "Feels like 27 C"
-        feelsLikeTemperatureLabel.customLabel.textColor = .lightGray
-        feelsLikeTemperatureLabel.customLabel.font = UIFont(name: "AppleSDGothicNeo-Light", size: 24)
+        feelsLikeTemperatureLabel.customLabel.textColor = .white.withAlphaComponent(0.8)
+        feelsLikeTemperatureLabel.customLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 28)
         
         cityLabel.customLabel.text = city.allCities.randomElement()
+        cityLabel.customLabel.textColor = .white
         
         searchButton.customButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
     }
     
     func layout() {
+        let backImage = backgroundImageView.customImage
         let vStack = verticalStackView.customStackView
         let hStack = horizontalStackView.customStackView
         
         
         NSLayoutConstraint.activate([
+            backImage.topAnchor.constraint(equalTo: view.topAnchor),
+            backImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            backImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            
             vStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             vStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             vStack.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3),
@@ -86,7 +99,9 @@ class ViewController: UIViewController {
     }
     
     @objc func buttonPressed() {
-        presentSearchAlertController(withTitle: "Enter the name of the city", message: nil, style: .alert)
+        presentSearchAlertController(withTitle: "Enter the name of the city", message: nil, style: .alert) { city in
+            self.networkWeatherManager.fetchCurrentWeather(forCity: city)
+        }
     }
     
   
