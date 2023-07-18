@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
     let city = Cities.shared
     var networkWeatherManager = NetworkWeatherManager()
     
+    lazy var cllocationView = CLLocationView()
     let backgroundImageView = ImageView()
     let weatherIconImageView = ImageView()
     let cityLabel = LabelView()
@@ -30,11 +32,21 @@ class ViewController: UIViewController {
             guard let self = self else { return }
             self.updateInterfaceWith(weather: currentWeather)
         }
-        networkWeatherManager.fetchCurrentWeather(forCity: "Moscow")
         
+        location()
         addViews()
         settings()
         layout()
+    }
+    
+    //MARK: - Functions
+    
+    func location() {
+        cllocationView.locationManager.delegate = self
+        
+        if CLLocationManager.locationServicesEnabled() {
+            cllocationView.locationManager.requestLocation()
+        }
     }
     
     func addViews() {
@@ -124,5 +136,15 @@ class ViewController: UIViewController {
 
 
 
-
+extension ViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        let latitude = location.coordinate.latitude
+        let longitude = location.coordinate.longitude
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+    }
+}
 
