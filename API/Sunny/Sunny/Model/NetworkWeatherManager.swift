@@ -6,21 +6,41 @@
 //
 
 import Foundation
+import CoreLocation
 
 
 
 class NetworkWeatherManager {
+    
+    enum RequestType {
+        case cityName(city: String)
+        case coordinate(latitude: CLLocationDegrees, longitude: CLLocationDegrees)
+    }
+    
     var onCompletion: ((CurrentWeather) -> Void)?
     
-    func fetchCurrentWeather(forCity city: String) {
-        let urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(apiKey)&units=metric"
+    func fetchCurrentWeather(forRequestType requestType: RequestType) {
+        var urlString = ""
+        
+        switch requestType {
+        case .cityName(let city):
+            urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(apiKey)&units=metric"
+        case .coordinate(let latitude ,let longitude):
+            urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=metric"
+        }
+        
         performRequest(forString: urlString)
     }
     
-    func fetchCurrentWeatherWithLocation(forLatitude latitude: String, forLongitude longitude: String) {
-        let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(latitude)&appid=\(apiKey)&units=metric"
-        performRequest(forString: urlString)
-    }
+//    func fetchCurrentWeather(forCity city: String) {
+//        let urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(apiKey)&units=metric"
+//        performRequest(forString: urlString)
+//    }
+//    
+//    func fetchCurrentWeatherWithLocation(forLatitude latitude: CLLocationDegrees, forLongitude longitude: CLLocationDegrees) {
+//        let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(latitude)&appid=\(apiKey)&units=metric"
+//        performRequest(forString: urlString)
+//    }
 
     
     fileprivate func performRequest(forString urlString: String) {
