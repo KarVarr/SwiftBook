@@ -17,6 +17,9 @@
 		17266CFF2A67F69E008E56DE /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266CFE2A67F69E008E56DE /* StackView.swift */; };
 		17266D012A67F7DB008E56DE /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266D002A67F7DB008E56DE /* TextFieldView.swift */; };
 		17266D032A68019D008E56DE /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266D022A68019D008E56DE /* ButtonView.swift */; };
+		17266D052A681289008E56DE /* TableViewCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266D042A681289008E56DE /* TableViewCustom.swift */; };
+		17266D072A6813C3008E56DE /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266D062A6813C3008E56DE /* TasksViewController.swift */; };
+		17266D092A681738008E56DE /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266D082A681738008E56DE /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		17266CFE2A67F69E008E56DE /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		17266D002A67F7DB008E56DE /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		17266D022A68019D008E56DE /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		17266D042A681289008E56DE /* TableViewCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCustom.swift; sourceTree = "<group>"; };
+		17266D062A6813C3008E56DE /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		17266D082A681738008E56DE /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				17266CE32A67F000008E56DE /* ViewController.swift */,
+				17266D062A6813C3008E56DE /* TasksViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -108,6 +115,8 @@
 				17266CFE2A67F69E008E56DE /* StackView.swift */,
 				17266D002A67F7DB008E56DE /* TextFieldView.swift */,
 				17266D022A68019D008E56DE /* ButtonView.swift */,
+				17266D042A681289008E56DE /* TableViewCustom.swift */,
+				17266D082A681738008E56DE /* TableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +212,9 @@
 				17266CFA2A67F20D008E56DE /* LabelView.swift in Sources */,
 				17266CFD2A67F4D2008E56DE /* Helper.swift in Sources */,
 				17266CE02A67F000008E56DE /* AppDelegate.swift in Sources */,
+				17266D092A681738008E56DE /* TableViewCell.swift in Sources */,
+				17266D052A681289008E56DE /* TableViewCustom.swift in Sources */,
+				17266D072A6813C3008E56DE /* TasksViewController.swift in Sources */,
 				17266CE22A67F000008E56DE /* SceneDelegate.swift in Sources */,
 				17266CFF2A67F69E008E56DE /* StackView.swift in Sources */,
 			);

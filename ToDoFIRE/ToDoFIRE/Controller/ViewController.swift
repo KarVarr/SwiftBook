@@ -81,6 +81,7 @@ class ViewController: UIViewController {
         loginButton.customButton.backgroundColor = .white.withAlphaComponent(0.2)
         loginButton.customButton.setTitle(Helper.String.login, for: .normal)
         loginButton.customButton.titleLabel?.font = Helper.Fonts.TamilSangamMN(withSize: 24)
+        loginButton.customButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         
         
         registerButton.customButton.titleLabel?.font = Helper.Fonts.TamilSangamMN(withSize: 16)
@@ -121,6 +122,14 @@ class ViewController: UIViewController {
         stackView.alignment = .center
         stackView.spacing = space
         stackView.distribution = .fillEqually
+    }
+    
+    @objc func loginButtonTapped() {
+        let tasksVC = TasksViewController()
+        
+        if let navigationController = self.navigationController {
+            navigationController.pushViewController(tasksVC, animated: true)
+        }
     }
     
     

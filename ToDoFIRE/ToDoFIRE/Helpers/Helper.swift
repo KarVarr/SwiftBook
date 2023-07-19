@@ -12,6 +12,8 @@ import UIKit
 enum Helper {
     //MARK: - Strings
     enum String {
+        static let cellKey = "Cell"
+        
         static let title = "ToDoFIRE"
         static let subtitle = "User does not exist!"
         static let email = "Email"
