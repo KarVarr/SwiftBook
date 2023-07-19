@@ -14,6 +14,10 @@ enum Helper {
     enum String {
         static let title = "ToDoFIRE"
         static let subtitle = "User does not exist!"
+        static let email = "Email"
+        static let password = "Password"
+        static let login = "Login"
+        static let register = "Register"
     }
     
     //MARK: - Fonts
