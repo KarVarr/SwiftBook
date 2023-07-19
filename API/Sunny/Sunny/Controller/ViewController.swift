@@ -44,6 +44,7 @@ class ViewController: UIViewController {
     func location() {
         cllocationView.locationManager.delegate = self
         
+        
         if CLLocationManager.locationServicesEnabled() {
             cllocationView.locationManager.requestLocation()
         }
