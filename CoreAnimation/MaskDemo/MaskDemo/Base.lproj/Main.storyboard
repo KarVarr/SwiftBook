@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQO-Iu-Th3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQO-Iu-Th3" customClass="ButtonView" customModule="MaskDemo" customModuleProvider="target">
                                 <rect key="frame" x="120" y="77" width="153" height="96"/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.32549019610000002" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -29,13 +29,18 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
                                 </buttonConfiguration>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1T-bf-EwQ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1T-bf-EwQ" customClass="View" customModule="MaskDemo" customModuleProvider="target">
                                 <rect key="frame" x="46" y="276" width="300" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="5K0-zG-uK0"/>
                                     <constraint firstAttribute="height" constant="300" id="LlG-4P-DDZ"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiiSize">
+                                        <real key="value" value="28"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -56,6 +61,11 @@
             <point key="canvasLocation" x="6.8702290076335872" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="VQO-Iu-Th3">
+            <size key="intrinsicContentSize" width="92.666666666666671" height="42.666666666666664"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
