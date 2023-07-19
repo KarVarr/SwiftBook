@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     }
     
     func settings() {
-        view.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         
         
         stackViewSetting(forStackView: stackViewForLabels.customStack, withSpacing: 10)
@@ -70,11 +70,14 @@ class ViewController: UIViewController {
     
     func settingsForTextFields() {
         emailTextField.customTextFieldView.placeholder = Helper.String.email
-        emailTextField.customTextFieldView.layer.cornerRadius = 5
+        emailTextField.customTextFieldView.layer.cornerRadius = 20
         
         passwordTextField.customTextFieldView.placeholder = Helper.String.password
-        passwordTextField.customTextFieldView.layer.cornerRadius = 5
+        passwordTextField.customTextFieldView.layer.cornerRadius = 20
         passwordTextField.customTextFieldView.isSecureTextEntry = true
+        
+        addLeftView(to: emailTextField.customTextFieldView, width: 20)
+        addLeftView(to: passwordTextField.customTextFieldView, width: 20)
     }
     
     func settingsForButtons() {
@@ -82,7 +85,7 @@ class ViewController: UIViewController {
         loginButton.customButton.setTitle(Helper.String.login, for: .normal)
         loginButton.customButton.titleLabel?.font = Helper.Fonts.TamilSangamMN(withSize: 24)
         loginButton.customButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        
+        loginButton.customButton.layer.cornerRadius = 20
         
         registerButton.customButton.titleLabel?.font = Helper.Fonts.TamilSangamMN(withSize: 16)
         registerButton.customButton.setTitle(Helper.String.register, for: .normal)
@@ -116,6 +119,12 @@ class ViewController: UIViewController {
         
     }
     
+    func addLeftView(to textField: UITextField, width: CGFloat) {
+        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 1))
+        textField.leftView = leftView
+        textField.leftViewMode = .always
+    }
+
     
     func stackViewSetting(forStackView stackView: UIStackView, withSpacing space: CGFloat) {
         stackView.axis = .vertical
