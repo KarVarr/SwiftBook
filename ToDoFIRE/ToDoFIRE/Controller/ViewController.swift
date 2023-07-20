@@ -23,9 +23,10 @@ class ViewController: UIViewController {
     let registerButton = ButtonView()
     let stackViewForButtons = StackView()
     
+    
+    //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         addViews()
         settings()
@@ -35,6 +36,24 @@ class ViewController: UIViewController {
         layout()
     }
     
+    //MARK: - ViewWillDisappear
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    //MARK: - ViewWillAppear
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    
+    //MARK: - VDL Section
     
     func addViews() {
         view.addSubview(stackViewForLabels.customStack)
@@ -71,10 +90,14 @@ class ViewController: UIViewController {
     func settingsForTextFields() {
         emailTextField.customTextFieldView.placeholder = Helper.String.email
         emailTextField.customTextFieldView.layer.cornerRadius = 20
+        emailTextField.customTextFieldView.delegate = self
+        emailTextField.customTextFieldView.tag = 0
         
         passwordTextField.customTextFieldView.placeholder = Helper.String.password
         passwordTextField.customTextFieldView.layer.cornerRadius = 20
         passwordTextField.customTextFieldView.isSecureTextEntry = true
+        passwordTextField.customTextFieldView.delegate = self
+        passwordTextField.customTextFieldView.tag = 1
         
         addLeftView(to: emailTextField.customTextFieldView, width: 20)
         addLeftView(to: passwordTextField.customTextFieldView, width: 20)
@@ -89,7 +112,7 @@ class ViewController: UIViewController {
         
         registerButton.customButton.titleLabel?.font = Helper.Fonts.TamilSangamMN(withSize: 16)
         registerButton.customButton.setTitle(Helper.String.register, for: .normal)
-
+        
     }
     
     func layout() {
@@ -108,7 +131,7 @@ class ViewController: UIViewController {
             stackViewForTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             emailTextField.customTextFieldView.widthAnchor.constraint(greaterThanOrEqualToConstant: 250),
             passwordTextField.customTextFieldView.widthAnchor.constraint(greaterThanOrEqualToConstant: 250),
-
+            
             stackViewForButtons.topAnchor.constraint(equalTo: stackViewForTextField.bottomAnchor, constant: 50),
             stackViewForButtons.heightAnchor.constraint(equalToConstant: 100),
             stackViewForButtons.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -119,12 +142,44 @@ class ViewController: UIViewController {
         
     }
     
+    
+    //MARK: - Functions
+    
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardHeight = keyboardFrame.cgRectValue.height
+            
+            UIView.animate(withDuration: 0.3) {
+                self.view.transform = CGAffineTransform(translationX: 0, y: -keyboardHeight / 2)
+            }
+        }
+    }
+    
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        UIView.animate(withDuration: 0.3) {
+            self.view.transform = .identity
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 0 {
+            passwordTextField.customTextFieldView.becomeFirstResponder()
+        } else if textField.tag == 1 {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     func addLeftView(to textField: UITextField, width: CGFloat) {
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 1))
         textField.leftView = leftView
         textField.leftViewMode = .always
     }
-
+    
     
     func stackViewSetting(forStackView stackView: UIStackView, withSpacing space: CGFloat) {
         stackView.axis = .vertical

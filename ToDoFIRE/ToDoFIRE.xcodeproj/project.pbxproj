@@ -24,6 +24,7 @@
 		17266D0E2A687FC3008E56DE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 17266D0D2A687FC3008E56DE /* FirebaseAuth */; };
 		17266D102A687FC3008E56DE /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 17266D0F2A687FC3008E56DE /* FirebaseDatabase */; };
 		17266D122A687FC3008E56DE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 17266D112A687FC3008E56DE /* FirebaseFirestore */; };
+		17266D152A69903A008E56DE /* ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266D142A69903A008E56DE /* ViewController + Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		17266D062A6813C3008E56DE /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		17266D082A681738008E56DE /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		17266D0A2A6822A2008E56DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		17266D142A69903A008E56DE /* ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,9 +142,18 @@
 		17266CFB2A67F4BD008E56DE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				17266D132A699014008E56DE /* Extentions */,
 				17266CFC2A67F4D2008E56DE /* Helper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		17266D132A699014008E56DE /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				17266D142A69903A008E56DE /* ViewController + Ext.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 				17266CE02A67F000008E56DE /* AppDelegate.swift in Sources */,
 				17266D092A681738008E56DE /* TableViewCell.swift in Sources */,
 				17266D052A681289008E56DE /* TableViewCustom.swift in Sources */,
+				17266D152A69903A008E56DE /* ViewController + Ext.swift in Sources */,
 				17266D072A6813C3008E56DE /* TasksViewController.swift in Sources */,
 				17266CE22A67F000008E56DE /* SceneDelegate.swift in Sources */,
 				17266CFF2A67F69E008E56DE /* StackView.swift in Sources */,
