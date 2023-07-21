@@ -28,8 +28,8 @@ extension ViewController: UITextFieldDelegate {
     func settings() {
         view.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         
-        subTitleLabel.customLabel.alpha = 0
         
+        subTitleLabel.customLabel.alpha = 0
         
         stackViewSetting(forStackView: stackViewForLabels.customStack, withSpacing: 10)
         stackViewSetting(forStackView: stackViewForTextField.customStack, withSpacing: 20)
@@ -56,6 +56,7 @@ extension ViewController: UITextFieldDelegate {
         passwordTextField.customTextFieldView.delegate = self
         passwordTextField.customTextFieldView.tag = 1
         
+        
         addLeftView(to: emailTextField.customTextFieldView, width: 20)
         addLeftView(to: passwordTextField.customTextFieldView, width: 20)
     }
@@ -69,6 +70,7 @@ extension ViewController: UITextFieldDelegate {
         
         registerButton.customButton.titleLabel?.font = Helper.Fonts.TamilSangamMN(withSize: 16)
         registerButton.customButton.setTitle(Helper.String.register, for: .normal)
+        registerButton.customButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
         
     }
     
@@ -97,6 +99,52 @@ extension ViewController: UITextFieldDelegate {
             
         ])
         
+    }
+    
+    func addLeftView(to textField: UITextField, width: CGFloat) {
+        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 1))
+        textField.leftView = leftView
+        textField.leftViewMode = .always
+    }
+    
+    func stackViewSetting(forStackView stackView: UIStackView, withSpacing space: CGFloat) {
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.spacing = space
+        stackView.distribution = .fillEqually
+    }
+    
+        
+    
+    //MARK: - Keyboard Settings
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardHeight = keyboardFrame.cgRectValue.height
+            
+            UIView.animate(withDuration: 0.3) {
+                self.view.transform = CGAffineTransform(translationX: 0, y: -keyboardHeight / 2)
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        UIView.animate(withDuration: 0.3) {
+            self.view.transform = .identity
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 0 {
+            passwordTextField.customTextFieldView.becomeFirstResponder()
+        } else if textField.tag == 1 {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }

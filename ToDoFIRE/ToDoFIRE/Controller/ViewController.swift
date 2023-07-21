@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
+    private let tasksVC = TasksViewController()
     
     let stackViewMain = StackView()
     
@@ -35,6 +36,13 @@ class ViewController: UIViewController {
         settingsForTextFields()
         settingsForButtons()
         layout()
+        
+        Auth.auth().addStateDidChangeListener { [weak self] auth, user in
+            if let navigationController = self?.navigationController {
+                navigationController.pushViewController(self!.tasksVC, animated: true)
+                return
+            }
+        }
     }
     
     //MARK: - ViewWillDisappear
@@ -43,63 +51,25 @@ class ViewController: UIViewController {
         
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
     //MARK: - ViewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        emailTextField.customTextFieldView.text = ""
+        passwordTextField.customTextFieldView.text = ""
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
     
     
     
     //MARK: - Functions
-    
-    @objc private func keyboardWillShow(_ notification: Notification) {
-        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardHeight = keyboardFrame.cgRectValue.height
-            
-            UIView.animate(withDuration: 0.3) {
-                self.view.transform = CGAffineTransform(translationX: 0, y: -keyboardHeight / 2)
-            }
-        }
-    }
-    
-    @objc private func keyboardWillHide(_ notification: Notification) {
-        UIView.animate(withDuration: 0.3) {
-            self.view.transform = .identity
-        }
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField.tag == 0 {
-            passwordTextField.customTextFieldView.becomeFirstResponder()
-        } else if textField.tag == 1 {
-            textField.resignFirstResponder()
-        }
-        return true
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    func addLeftView(to textField: UITextField, width: CGFloat) {
-        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 1))
-        textField.leftView = leftView
-        textField.leftViewMode = .always
-    }
-    
-    
-    func stackViewSetting(forStackView stackView: UIStackView, withSpacing space: CGFloat) {
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.spacing = space
-        stackView.distribution = .fillEqually
-    }
     
     func displayWarningLabel(withText text: String) {
         subTitleLabel.customLabel.text = text
@@ -109,14 +79,9 @@ class ViewController: UIViewController {
         }) { [weak self] complete in
             self?.subTitleLabel.customLabel.alpha = 0
         }
-        
-        subTitleLabel.customLabel.alpha = 0
     }
     
     @objc func loginButtonTapped() {
-        let tasksVC = TasksViewController()
-        
-        
         guard let email = emailTextField.customTextFieldView.text, let password = passwordTextField.customTextFieldView.text, email != "", password != "" else {
             displayWarningLabel(withText: "Info is incorrect")
             return
@@ -130,12 +95,36 @@ class ViewController: UIViewController {
             
             if user != nil {
                 if let navigationController = self?.navigationController {
-                    navigationController.pushViewController(tasksVC, animated: true)
+                    navigationController.pushViewController(self!.tasksVC, animated: true)
                     return
                 }
             }
             
             self?.displayWarningLabel(withText: "No such user")
+        }
+    }
+    
+    
+    @objc func registerButtonTapped() {
+        guard let email = emailTextField.customTextFieldView.text, let password = passwordTextField.customTextFieldView.text, email != "", password != "" else {
+            displayWarningLabel(withText: "Info is incorrect")
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] user, error in
+            if error == nil {
+                if user != nil {
+                    
+                } else {
+                    let ac = UIAlertController(title: "Error", message: "User is not created", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    self?.present(ac, animated: true)
+                    
+                    print("User is not created")
+                }
+            } else {
+                print(error?.localizedDescription ?? "error")
+            }
         }
     }
     

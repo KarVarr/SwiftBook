@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class TasksViewController: UIViewController {
     
@@ -28,6 +29,8 @@ class TasksViewController: UIViewController {
         view.backgroundColor = .orange
         title = "Tasks"
         
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOutTapped))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
         
         tableVC.table.register(TableViewCell.self, forCellReuseIdentifier: Helper.String.cellKey)
@@ -48,6 +51,22 @@ class TasksViewController: UIViewController {
     @objc func addTapped() {
         print("add")
     }
+    
+    @objc func signOutTapped() {
+        do {
+            try Auth.auth().signOut()
+        } catch  {
+            print(error.localizedDescription)
+        }
+        
+        
+        
+        if let navigationController = navigationController {
+            navigationController.popViewController(animated: true)
+            return
+        }
+    }
+
 
 }
 
