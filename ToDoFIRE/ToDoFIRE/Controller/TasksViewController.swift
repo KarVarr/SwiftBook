@@ -14,7 +14,7 @@ class TasksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         addViews()
         settings()
         layout()
@@ -49,8 +49,24 @@ class TasksViewController: UIViewController {
     }
     
     @objc func addTapped() {
-        print("add")
+        let ac = UIAlertController(title: "New Task", message: "Write a new task here:", preferredStyle: .alert)
+        ac.addTextField()
+        let save = UIAlertAction(title: "Save", style: .default) { [weak self] _ in
+            guard let textField = ac.textFields?.first, textField.text != "" else {
+                let alert = UIAlertController(title: "No Task", message: "Please write a task", preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                self?.present(alert, animated: true)
+                return
+            }
+            
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        ac.addAction(save)
+        ac.addAction(cancel)
+        present(ac, animated: true)
     }
+    
     
     @objc func signOutTapped() {
         do {
@@ -66,8 +82,8 @@ class TasksViewController: UIViewController {
             return
         }
     }
-
-
+    
+    
 }
 
 

@@ -25,6 +25,8 @@
 		17266D102A687FC3008E56DE /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 17266D0F2A687FC3008E56DE /* FirebaseDatabase */; };
 		17266D122A687FC3008E56DE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 17266D112A687FC3008E56DE /* FirebaseFirestore */; };
 		17266D152A69903A008E56DE /* ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266D142A69903A008E56DE /* ViewController + Ext.swift */; };
+		17266D172A6BD0AD008E56DE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266D162A6BD0AD008E56DE /* User.swift */; };
+		17266D192A6BD0B5008E56DE /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17266D182A6BD0B5008E56DE /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		17266D082A681738008E56DE /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		17266D0A2A6822A2008E56DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17266D142A69903A008E56DE /* ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Ext.swift"; sourceTree = "<group>"; };
+		17266D162A6BD0AD008E56DE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		17266D182A6BD0B5008E56DE /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,8 @@
 		17266CF82A67F1E7008E56DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				17266D162A6BD0AD008E56DE /* User.swift */,
+				17266D182A6BD0B5008E56DE /* Task.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17266D172A6BD0AD008E56DE /* User.swift in Sources */,
 				17266CE42A67F000008E56DE /* ViewController.swift in Sources */,
 				17266D012A67F7DB008E56DE /* TextFieldView.swift in Sources */,
 				17266D032A68019D008E56DE /* ButtonView.swift in Sources */,
@@ -246,6 +253,7 @@
 				17266D152A69903A008E56DE /* ViewController + Ext.swift in Sources */,
 				17266D072A6813C3008E56DE /* TasksViewController.swift in Sources */,
 				17266CE22A67F000008E56DE /* SceneDelegate.swift in Sources */,
+				17266D192A6BD0B5008E56DE /* Task.swift in Sources */,
 				17266CFF2A67F69E008E56DE /* StackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
