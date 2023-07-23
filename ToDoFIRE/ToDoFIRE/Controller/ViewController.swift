@@ -10,6 +10,7 @@ import Firebase
 
 class ViewController: UIViewController {
     private let tasksVC = TasksViewController()
+    var ref: DatabaseReference!
     
     let stackViewMain = StackView()
     
@@ -36,6 +37,8 @@ class ViewController: UIViewController {
         settingsForTextFields()
         settingsForButtons()
         layout()
+        
+        ref = Database.database().reference(withPath: "users")
         
         Auth.auth().addStateDidChangeListener { [weak self] auth, user in
             if let navigationController = self?.navigationController {
@@ -111,22 +114,23 @@ class ViewController: UIViewController {
             return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] user, error in
-            if error == nil {
-                if user != nil {
-                    
-                } else {
-                    let ac = UIAlertController(title: "Error", message: "User is not created", preferredStyle: .alert)
-                    ac.addAction(UIAlertAction(title: "OK", style: .default))
-                    self?.present(ac, animated: true)
-                    
-                    print("User is not created")
-                }
-            } else {
+        Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] authResult, error in
+            guard  error == nil, let user = authResult?.user else {
+                let ac = UIAlertController(title: "Error", message: "User is not created", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default))
+                self?.present(ac, animated: true)
+                
+                print("User is not created")
                 print(error?.localizedDescription ?? "error")
+                return
             }
-        }
+            
+            let userRef = self?.ref?.child(user.uid)
+            userRef?.setValue(["email": user.email])
+            
+        })
     }
+    
     
     
 }

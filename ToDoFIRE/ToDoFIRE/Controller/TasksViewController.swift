@@ -12,10 +12,15 @@ class TasksViewController: UIViewController {
     
     let tableVC = TableViewCustom()
     
+    var user: User!
+    var ref: DatabaseReference!
+    var tasks = Array<Task>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addViews()
+        firebaseSettings()
         settings()
         layout()
     }
@@ -23,6 +28,12 @@ class TasksViewController: UIViewController {
     
     func addViews() {
         view.addSubview(tableVC.table)
+    }
+    
+    func firebaseSettings() {
+        guard let currentUser = Auth.auth().currentUser else { return }
+        user = User(user: currentUser)
+        ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("tasks")
     }
     
     func settings() {
@@ -58,6 +69,10 @@ class TasksViewController: UIViewController {
                 self?.present(alert, animated: true)
                 return
             }
+            
+            let task = Task(title: textField.text!, userId: (self?.user.uid)!)
+            let taskRef = self?.ref.child(task.title.lowercased())
+            taskRef?.setValue(task.convertToDictionary())
             
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
