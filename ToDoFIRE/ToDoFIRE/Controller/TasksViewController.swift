@@ -124,6 +124,30 @@ class TasksViewController: UIViewController {
 
 
 extension TasksViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let task = tasks[indexPath.row]
+            task.ref?.removeValue()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        let task = tasks[indexPath.row]
+        let isCompleted = !task.completed
+        
+        toggleCompleted(cell, isCompleted: isCompleted)
+        task.ref?.updateChildValues(["completed": isCompleted])
+    }
+    
+    func toggleCompleted(_ cell: UITableViewCell, isCompleted: Bool) {
+        cell.accessoryType = isCompleted ? .checkmark : .none
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }
@@ -131,6 +155,9 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Helper.String.cellKey, for: indexPath) as! TableViewCell
         cell.label.customLabel.text = tasks[indexPath.row].title
+        
+        let isCompleted = tasks[indexPath.row].completed
+        toggleCompleted(cell, isCompleted: isCompleted)
         return cell
     }
     
