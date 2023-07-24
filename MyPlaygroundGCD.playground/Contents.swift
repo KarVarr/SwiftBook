@@ -136,21 +136,50 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 //}
 
 //MARK: - DispatchSource
-var time = 0
+//var time = 0
+//
+//let queue = DispatchQueue(label: "source", attributes: .concurrent)
+//
+//let timer = DispatchSource.makeTimerSource(queue: queue)
+//
+//timer.schedule(deadline: .now(), repeating: .seconds(1), leeway: .milliseconds(300))
+//
+//timer.setEventHandler {
+//    time += 1
+//    print("Time is \(time)")
+//}
+//
+//timer.setCancelHandler {
+//    print("time is canceled")
+//}
+//
+//timer.resume()
 
-let queue = DispatchQueue(label: "source", attributes: .concurrent)
 
-let timer = DispatchSource.makeTimerSource(queue: queue)
-
-timer.schedule(deadline: .now(), repeating: .seconds(1), leeway: .milliseconds(300))
-
-timer.setEventHandler {
-    time += 1
-    print("Time is \(time)")
-}
+class Bird {
+    func fly () {
+        print("fly")
+    }
     
-timer.setCancelHandler {
-    print("time is canceled")
+    func swim() {
+        print("Swim")
+    }
 }
 
-timer.resume()
+let bird = Bird()
+bird.fly()
+bird.swim()
+
+
+class Sparrow: Bird {
+    override func swim() {
+//        print("sparrow can't swim")
+//        fatalError()
+    }
+    
+    
+}
+
+let sparrow = Sparrow()
+sparrow.fly()
+sparrow.swim()
