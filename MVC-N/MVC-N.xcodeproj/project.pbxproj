@@ -21,6 +21,7 @@
 		17E9B0E42A6FC1950048CA0E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B0E32A6FC1950048CA0E /* NetworkService.swift */; };
 		17E9B0E72A6FC63C0048CA0E /* CommentNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B0E62A6FC63C0048CA0E /* CommentNetworkService.swift */; };
 		17E9B0E92A6FC6F00048CA0E /* GetCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B0E82A6FC6F00048CA0E /* GetCommentResponse.swift */; };
+		17E9B0EB2A6FD2DC0048CA0E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B0EA2A6FD2DB0048CA0E /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		17E9B0E32A6FC1950048CA0E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		17E9B0E62A6FC63C0048CA0E /* CommentNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentNetworkService.swift; sourceTree = "<group>"; };
 		17E9B0E82A6FC6F00048CA0E /* GetCommentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCommentResponse.swift; sourceTree = "<group>"; };
+		17E9B0EA2A6FD2DB0048CA0E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		17266D612A6EC60A008E56DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				17E9B0EA2A6FD2DB0048CA0E /* NetworkError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,8 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				17E9B0DC2A6ECFF70048CA0E /* LabelView.swift */,
-				17E9B0DB2A6ECFE50048CA0E /* TableView */,
 				17E9B0DE2A6ED1CE0048CA0E /* TextView.swift */,
+				17E9B0DB2A6ECFE50048CA0E /* TableView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -146,8 +149,8 @@
 		17266D662A6EC632008E56DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				17E9B0EC2A6FD3450048CA0E /* Responses */,
 				17E9B0E02A6FBE010048CA0E /* Comment.swift */,
-				17E9B0E82A6FC6F00048CA0E /* GetCommentResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +187,14 @@
 				17E9B0E62A6FC63C0048CA0E /* CommentNetworkService.swift */,
 			);
 			path = CommentNetworkService;
+			sourceTree = "<group>";
+		};
+		17E9B0EC2A6FD3450048CA0E /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				17E9B0E82A6FC6F00048CA0E /* GetCommentResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +282,7 @@
 				17E9B0E42A6FC1950048CA0E /* NetworkService.swift in Sources */,
 				17E9B0DF2A6ED1CE0048CA0E /* TextView.swift in Sources */,
 				17266D4C2A6EC564008E56DE /* AppDelegate.swift in Sources */,
+				17E9B0EB2A6FD2DC0048CA0E /* NetworkError.swift in Sources */,
 				17266D4E2A6EC564008E56DE /* SceneDelegate.swift in Sources */,
 				17E9B0DD2A6ECFF70048CA0E /* LabelView.swift in Sources */,
 			);

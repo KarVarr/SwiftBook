@@ -10,7 +10,7 @@ import SnapKit
 
 class CommentsViewController: UIViewController {
     let tableVC = TableVC()
-   
+    var comments = [Comment]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,11 @@ class CommentsViewController: UIViewController {
         settingsForTableVC()
         settings()
         layout()
+        
+        CommentNetworkService.getComments { response in
+            self.comments = response.comments
+            self.tableVC.table.reloadData()
+        }
         
     }
     
@@ -54,12 +59,13 @@ extension CommentsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableVCCell
-        
+        let comment = comments[indexPath.row]
+        cell.configure(with: comment)
         return cell
     }
     
