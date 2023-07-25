@@ -20,25 +20,26 @@ class CommentsViewController: UIViewController {
         settingsForTableVC()
         settings()
         layout()
+        
     }
     
-    func addView() {
+    private func addView() {
         view.addSubview(tableVC.table)
     }
     
-    func settingsForTableVC() {
+    private func settingsForTableVC() {
         tableVC.table.register(TableVCCell.self, forCellReuseIdentifier: "Cell")
         tableVC.table.delegate = self
         tableVC.table.dataSource = self
         
     }
     
-    func settings() {
+    private func settings() {
         view.backgroundColor = .orange
         title = "MVC-N"
     }
     
-    func layout() {
+    private func layout() {
         tableVC.table.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

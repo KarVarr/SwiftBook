@@ -18,6 +18,9 @@
 		17E9B0DD2A6ECFF70048CA0E /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B0DC2A6ECFF70048CA0E /* LabelView.swift */; };
 		17E9B0DF2A6ED1CE0048CA0E /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B0DE2A6ED1CE0048CA0E /* TextView.swift */; };
 		17E9B0E12A6FBE010048CA0E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B0E02A6FBE010048CA0E /* Comment.swift */; };
+		17E9B0E42A6FC1950048CA0E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B0E32A6FC1950048CA0E /* NetworkService.swift */; };
+		17E9B0E72A6FC63C0048CA0E /* CommentNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B0E62A6FC63C0048CA0E /* CommentNetworkService.swift */; };
+		17E9B0E92A6FC6F00048CA0E /* GetCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B0E82A6FC6F00048CA0E /* GetCommentResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		17E9B0DC2A6ECFF70048CA0E /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		17E9B0DE2A6ED1CE0048CA0E /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		17E9B0E02A6FBE010048CA0E /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		17E9B0E32A6FC1950048CA0E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		17E9B0E62A6FC63C0048CA0E /* CommentNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentNetworkService.swift; sourceTree = "<group>"; };
+		17E9B0E82A6FC6F00048CA0E /* GetCommentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCommentResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 				17266D612A6EC60A008E56DE /* Model */,
 				17266D602A6EC604008E56DE /* View */,
 				17266D5F2A6EC5FB008E56DE /* Controller */,
+				17E9B0E22A6FC1490048CA0E /* NetworkService */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -113,6 +120,7 @@
 				17266D662A6EC632008E56DE /* Model */,
 				17266D652A6EC62C008E56DE /* View */,
 				17266D642A6EC624008E56DE /* Controller */,
+				17E9B0E52A6FC6170048CA0E /* CommentNetworkService */,
 			);
 			path = Comments;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				17E9B0E02A6FBE010048CA0E /* Comment.swift */,
+				17E9B0E82A6FC6F00048CA0E /* GetCommentResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,6 +168,22 @@
 				17E9B0D72A6ECA300048CA0E /* TableVC.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		17E9B0E22A6FC1490048CA0E /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				17E9B0E32A6FC1950048CA0E /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		17E9B0E52A6FC6170048CA0E /* CommentNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				17E9B0E62A6FC63C0048CA0E /* CommentNetworkService.swift */,
+			);
+			path = CommentNetworkService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +265,10 @@
 				17E9B0DA2A6ECA400048CA0E /* TableVCCell.swift in Sources */,
 				17266D502A6EC564008E56DE /* CommentsViewController.swift in Sources */,
 				17E9B0D82A6ECA300048CA0E /* TableVC.swift in Sources */,
+				17E9B0E92A6FC6F00048CA0E /* GetCommentResponse.swift in Sources */,
 				17E9B0E12A6FBE010048CA0E /* Comment.swift in Sources */,
+				17E9B0E72A6FC63C0048CA0E /* CommentNetworkService.swift in Sources */,
+				17E9B0E42A6FC1950048CA0E /* NetworkService.swift in Sources */,
 				17E9B0DF2A6ED1CE0048CA0E /* TextView.swift in Sources */,
 				17266D4C2A6EC564008E56DE /* AppDelegate.swift in Sources */,
 				17266D4E2A6EC564008E56DE /* SceneDelegate.swift in Sources */,
