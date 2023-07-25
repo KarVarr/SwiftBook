@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		173D2D432A7013B3001BC3FD /* TableViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D2D422A7013B3001BC3FD /* TableViewModelType.swift */; };
+		173D2D432A7013B3001BC3FD /* TableViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D2D422A7013B3001BC3FD /* TableViewViewModelType.swift */; };
 		173D2D452A7013ED001BC3FD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D2D442A7013ED001BC3FD /* ViewModel.swift */; };
+		173D2D492A701C05001BC3FD /* TableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D2D482A701C05001BC3FD /* TableViewCellViewModelType.swift */; };
+		173D2D4B2A701D84001BC3FD /* TableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D2D4A2A701D84001BC3FD /* TableViewCellViewModel.swift */; };
 		17E9B1272A70028A0048CA0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B1262A70028A0048CA0E /* AppDelegate.swift */; };
 		17E9B1292A70028A0048CA0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B1282A70028A0048CA0E /* SceneDelegate.swift */; };
 		17E9B12B2A70028A0048CA0E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B12A2A70028A0048CA0E /* TableViewController.swift */; };
@@ -21,8 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		173D2D422A7013B3001BC3FD /* TableViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModelType.swift; sourceTree = "<group>"; };
+		173D2D422A7013B3001BC3FD /* TableViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewModelType.swift; sourceTree = "<group>"; };
 		173D2D442A7013ED001BC3FD /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		173D2D482A701C05001BC3FD /* TableViewCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellViewModelType.swift; sourceTree = "<group>"; };
+		173D2D4A2A701D84001BC3FD /* TableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellViewModel.swift; sourceTree = "<group>"; };
 		17E9B1232A70028A0048CA0E /* MVVM-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E9B1262A70028A0048CA0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17E9B1282A70028A0048CA0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				173D2D442A7013ED001BC3FD /* ViewModel.swift */,
+				173D2D4A2A701D84001BC3FD /* TableViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -58,7 +63,8 @@
 		173D2D472A70147E001BC3FD /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				173D2D422A7013B3001BC3FD /* TableViewModelType.swift */,
+				173D2D422A7013B3001BC3FD /* TableViewViewModelType.swift */,
+				173D2D482A701C05001BC3FD /* TableViewCellViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -82,8 +88,8 @@
 		17E9B1252A70028A0048CA0E /* MVVM-2 */ = {
 			isa = PBXGroup;
 			children = (
-				173D2D472A70147E001BC3FD /* Protocols */,
 				17E9B13A2A7002A30048CA0E /* Application */,
+				173D2D472A70147E001BC3FD /* Protocols */,
 				17E9B1462A700E760048CA0E /* Model */,
 				17E9B1452A700E6E0048CA0E /* View */,
 				173D2D462A701476001BC3FD /* ViewModel */,
@@ -205,13 +211,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				173D2D4B2A701D84001BC3FD /* TableViewCellViewModel.swift in Sources */,
 				17E9B12B2A70028A0048CA0E /* TableViewController.swift in Sources */,
 				17E9B1422A700A2A0048CA0E /* Profile.swift in Sources */,
 				17E9B1402A7007ED0048CA0E /* TableViewCell.swift in Sources */,
 				17E9B1272A70028A0048CA0E /* AppDelegate.swift in Sources */,
-				173D2D432A7013B3001BC3FD /* TableViewModelType.swift in Sources */,
+				173D2D432A7013B3001BC3FD /* TableViewViewModelType.swift in Sources */,
 				17E9B1292A70028A0048CA0E /* SceneDelegate.swift in Sources */,
 				173D2D452A7013ED001BC3FD /* ViewModel.swift in Sources */,
+				173D2D492A701C05001BC3FD /* TableViewCellViewModelType.swift in Sources */,
 				17E9B1442A700A9A0048CA0E /* LabelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

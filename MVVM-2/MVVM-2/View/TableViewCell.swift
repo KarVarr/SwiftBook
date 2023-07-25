@@ -12,6 +12,14 @@ class TableViewCell: UITableViewCell {
     let fullNameLabel = LabelView()
     let ageLabel = LabelView()
     
+    weak var viewModel: TableViewCellViewModelType? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else { return }
+            fullNameLabel.customLabel.text = viewModel.fullName
+            ageLabel.customLabel.text = viewModel.age
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
