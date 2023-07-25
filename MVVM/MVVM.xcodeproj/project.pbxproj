@@ -16,6 +16,7 @@
 		17E9B1132A6FEF360048CA0E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 17E9B1122A6FEF360048CA0E /* SnapKit */; };
 		17E9B1152A6FEF6E0048CA0E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B1142A6FEF6E0048CA0E /* Profile.swift */; };
 		17E9B1172A6FEFBA0048CA0E /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B1162A6FEFBA0048CA0E /* StackView.swift */; };
+		17E9B1192A6FF51C0048CA0E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E9B1182A6FF51C0048CA0E /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		17E9B10F2A6FEE990048CA0E /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		17E9B1142A6FEF6E0048CA0E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		17E9B1162A6FEFBA0048CA0E /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		17E9B1182A6FF51C0048CA0E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				17E9B10F2A6FEE990048CA0E /* LabelView.swift */,
 				17E9B10D2A6FEDC50048CA0E /* Resources */,
 				17E9B1162A6FEFBA0048CA0E /* StackView.swift */,
+				17E9B1182A6FF51C0048CA0E /* ViewModel.swift */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				17E9B0FA2A6FEDAE0048CA0E /* AppDelegate.swift in Sources */,
 				17E9B0FC2A6FEDAE0048CA0E /* SceneDelegate.swift in Sources */,
 				17E9B1172A6FEFBA0048CA0E /* StackView.swift in Sources */,
+				17E9B1192A6FF51C0048CA0E /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,13 +15,13 @@ class ViewController: UIViewController {
     let secondNameLabel = LabelView()
     let ageLabel = LabelView()
     
-    var profile: Profile? {
+    var viewModel: ViewModel? {
         didSet {
-            guard let profile = profile else { return }
+            guard let viewModel = viewModel else { return }
             
-            self.nameLabel.customLabel.text = profile.name
-            self.secondNameLabel.customLabel.text = profile.secondName
-            self.ageLabel.customLabel.text = String(profile.age)
+            self.nameLabel.customLabel.text = viewModel.name
+            self.secondNameLabel.customLabel.text = viewModel.secondName
+            self.ageLabel.customLabel.text = String(viewModel.age)
         }
     }
 
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         stackSettings()
         layout()
         
-        profile = Profile(name: "John", secondName: "Black", age: 33)
+        viewModel = ViewModel()
     }
     
     private func addViews() {
