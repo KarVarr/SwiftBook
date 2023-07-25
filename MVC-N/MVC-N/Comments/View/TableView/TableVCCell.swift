@@ -32,16 +32,16 @@ class TableVCCell: UITableViewCell {
         layout()
     }
     
-    func addView() {
+    private func addView() {
         contentView.addSubview(label.label)
         contentView.addSubview(textV.text)
     }
     
-    func setting() {
+    private func setting() {
         
     }
     
-    func layout() {
+    private func layout() {
         label.label.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16)
             make.top.equalToSuperview().offset(8)
@@ -54,5 +54,12 @@ class TableVCCell: UITableViewCell {
             make.right.equalTo(label.label)
             make.bottom.equalToSuperview().offset(-8)
         }
+    }
+    
+    //MARK: - Functions
+    
+    func configure(with comment: Comment) {
+        self.label.label.text = comment.name
+        self.textV.text.text = comment.body
     }
 }
