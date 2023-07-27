@@ -8,6 +8,9 @@
 import Foundation
 
 class TableViewCellViewModel: TableViewCellViewModelType {
+    
+    private var profile: Profile
+    
     var fullName: String {
         return profile.name + " " + profile.secondName
     }
@@ -16,7 +19,6 @@ class TableViewCellViewModel: TableViewCellViewModelType {
         return String(profile.age)
     }
     
-    private var profile: Profile
     
     init(profile: Profile) {
         self.profile = profile

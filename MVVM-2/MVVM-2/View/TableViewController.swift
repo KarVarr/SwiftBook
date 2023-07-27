@@ -51,16 +51,31 @@ extension TableViewController {
         return viewModel?.numberOfRows() ?? 0
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailVC = DetailViewController()
+        if var viewModel = viewModel as? ViewModel {
+            viewModel.selectRow(atIndexPath: indexPath)
+            
+            let selectedRowViewModel = viewModel.viewModelForSelectedRow()
+            detailVC.viewModel = selectedRowViewModel
+            
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
+        
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
+        
         guard let viewModel = viewModel else { return UITableViewCell()}
         
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
-        
+        cell.accessoryType = .disclosureIndicator
         cell.viewModel = cellViewModel
         
         //        cell.fullNameLabel.customLabel.text = "\(profile.name) \(profile.secondName)"
-//        cell.ageLabel.customLabel.text = "\(profile.age)"
+        //        cell.ageLabel.customLabel.text = "\(profile.age)"
         
         return cell
     }

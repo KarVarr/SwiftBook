@@ -49,8 +49,6 @@ class TableViewCell: UITableViewCell {
     }
     
     func setting() {
-        fullNameLabel.customLabel.layer.borderColor = UIColor.red.cgColor
-        fullNameLabel.customLabel.layer.borderWidth = 2
     }
     
     func layout() {
