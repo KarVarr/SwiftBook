@@ -15,10 +15,11 @@
 		173D2D9A2A7577A8001BC3FD /* TableViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D2D992A7577A8001BC3FD /* TableViewView.swift */; };
 		173D2D9D2A75780F001BC3FD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 173D2D9C2A75780F001BC3FD /* SnapKit */; };
 		173D2D9F2A7578D1001BC3FD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D2D9E2A7578D1001BC3FD /* TableViewCell.swift */; };
+		173D2DA52A757C19001BC3FD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 173D2DA42A757C19001BC3FD /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		173D2D7D2A757655001BC3FD /* Alamofire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alamofire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		173D2D7D2A757655001BC3FD /* ALF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		173D2D802A757655001BC3FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		173D2D822A757655001BC3FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		173D2D842A757655001BC3FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +36,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				173D2D9D2A75780F001BC3FD /* SnapKit in Frameworks */,
+				173D2DA52A757C19001BC3FD /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +54,7 @@
 		173D2D7E2A757655001BC3FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				173D2D7D2A757655001BC3FD /* Alamofire.app */,
+				173D2D7D2A757655001BC3FD /* ALF.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,9 +117,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		173D2D7C2A757655001BC3FD /* Alamofire */ = {
+		173D2D7C2A757655001BC3FD /* ALF */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 173D2D912A757657001BC3FD /* Build configuration list for PBXNativeTarget "Alamofire" */;
+			buildConfigurationList = 173D2D912A757657001BC3FD /* Build configuration list for PBXNativeTarget "ALF" */;
 			buildPhases = (
 				173D2D792A757655001BC3FD /* Sources */,
 				173D2D7A2A757655001BC3FD /* Frameworks */,
@@ -127,12 +129,13 @@
 			);
 			dependencies = (
 			);
-			name = Alamofire;
+			name = ALF;
 			packageProductDependencies = (
 				173D2D9C2A75780F001BC3FD /* SnapKit */,
+				173D2DA42A757C19001BC3FD /* Alamofire */,
 			);
 			productName = Alamofire;
-			productReference = 173D2D7D2A757655001BC3FD /* Alamofire.app */;
+			productReference = 173D2D7D2A757655001BC3FD /* ALF.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -150,7 +153,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 173D2D782A757655001BC3FD /* Build configuration list for PBXProject "Alamofire" */;
+			buildConfigurationList = 173D2D782A757655001BC3FD /* Build configuration list for PBXProject "ALF" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -161,12 +164,13 @@
 			mainGroup = 173D2D742A757655001BC3FD;
 			packageReferences = (
 				173D2D9B2A75780F001BC3FD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				173D2DA32A757C19001BC3FD /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 173D2D7E2A757655001BC3FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				173D2D7C2A757655001BC3FD /* Alamofire */,
+				173D2D7C2A757655001BC3FD /* ALF */,
 			);
 		};
 /* End PBXProject section */
@@ -381,7 +385,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		173D2D782A757655001BC3FD /* Build configuration list for PBXProject "Alamofire" */ = {
+		173D2D782A757655001BC3FD /* Build configuration list for PBXProject "ALF" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				173D2D8F2A757657001BC3FD /* Debug */,
@@ -390,7 +394,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		173D2D912A757657001BC3FD /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
+		173D2D912A757657001BC3FD /* Build configuration list for PBXNativeTarget "ALF" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				173D2D922A757657001BC3FD /* Debug */,
@@ -410,6 +414,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		173D2DA32A757C19001BC3FD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -417,6 +429,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 173D2D9B2A75780F001BC3FD /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		173D2DA42A757C19001BC3FD /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 173D2DA32A757C19001BC3FD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
