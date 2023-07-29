@@ -14,6 +14,7 @@
 		173D2D8D2A757657001BC3FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 173D2D8B2A757657001BC3FD /* LaunchScreen.storyboard */; };
 		173D2D9A2A7577A8001BC3FD /* TableViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D2D992A7577A8001BC3FD /* TableViewView.swift */; };
 		173D2D9D2A75780F001BC3FD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 173D2D9C2A75780F001BC3FD /* SnapKit */; };
+		173D2D9F2A7578D1001BC3FD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D2D9E2A7578D1001BC3FD /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		173D2D8C2A757657001BC3FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		173D2D8E2A757657001BC3FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		173D2D992A7577A8001BC3FD /* TableViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewView.swift; sourceTree = "<group>"; };
+		173D2D9E2A7578D1001BC3FD /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +60,9 @@
 		173D2D7F2A757655001BC3FD /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
+				173D2D952A7576A9001BC3FD /* Aplication */,
 				173D2D972A75778D001BC3FD /* Model */,
 				173D2D982A757794001BC3FD /* View */,
-				173D2D952A7576A9001BC3FD /* Aplication */,
 				173D2D962A7576B3001BC3FD /* Controller */,
 				173D2D942A757670001BC3FD /* Resources */,
 			);
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				173D2D992A7577A8001BC3FD /* TableViewView.swift */,
+				173D2D9E2A7578D1001BC3FD /* TableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				173D2D9F2A7578D1001BC3FD /* TableViewCell.swift in Sources */,
 				173D2D9A2A7577A8001BC3FD /* TableViewView.swift in Sources */,
 				173D2D852A757655001BC3FD /* ViewController.swift in Sources */,
 				173D2D812A757655001BC3FD /* AppDelegate.swift in Sources */,
