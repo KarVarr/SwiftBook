@@ -9,20 +9,35 @@ import UIKit
 import SnapKit
 import Alamofire
 
+
 class ViewController: UIViewController {
     
     let customTable = TableViewView()
     let array = [Int]()
+    let url = "http://data.fixer.io/api/latest?access_key=a95f5542d5ed32ef80d6fec5f2694f09"
+    let key = "a95f5542d5ed32ef80d6fec5f2694f09"
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addView()
         settings()
         layout()
+        
+        getPrice(url: url)
     }
     
+    func getPrice(url: String) {
+        
+        AF.request(url).responseJSON { response in
+            print(response)
+        }
+    }
+    
+    
+    
+    //MARK: - Settings
     private func addView() {
         view.addSubview(customTable.table)
     }
@@ -44,8 +59,8 @@ class ViewController: UIViewController {
             
         }
     }
-
-
+    
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
