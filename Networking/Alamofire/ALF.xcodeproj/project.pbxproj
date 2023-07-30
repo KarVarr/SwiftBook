@@ -16,6 +16,7 @@
 		173D2D9D2A75780F001BC3FD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 173D2D9C2A75780F001BC3FD /* SnapKit */; };
 		173D2D9F2A7578D1001BC3FD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D2D9E2A7578D1001BC3FD /* TableViewCell.swift */; };
 		173D2DA52A757C19001BC3FD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 173D2DA42A757C19001BC3FD /* Alamofire */; };
+		173D2DA72A768D9D001BC3FD /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D2DA62A768D9D001BC3FD /* Price.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		173D2D8E2A757657001BC3FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		173D2D992A7577A8001BC3FD /* TableViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewView.swift; sourceTree = "<group>"; };
 		173D2D9E2A7578D1001BC3FD /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		173D2DA62A768D9D001BC3FD /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		173D2D972A75778D001BC3FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				173D2DA62A768D9D001BC3FD /* Price.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				173D2D852A757655001BC3FD /* ViewController.swift in Sources */,
 				173D2D812A757655001BC3FD /* AppDelegate.swift in Sources */,
 				173D2D832A757655001BC3FD /* SceneDelegate.swift in Sources */,
+				173D2DA72A768D9D001BC3FD /* Price.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
