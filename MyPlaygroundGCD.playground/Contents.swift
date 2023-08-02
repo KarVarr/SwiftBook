@@ -82,7 +82,7 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 //}
 //
 //print("this print might be upper then last one1 ")
-        
+
 //MARK: - DispatchGroupItem
 
 //let workItem = DispatchWorkItem(qos: .utility, flags: .detached) {
@@ -154,32 +154,58 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 //}
 //
 //timer.resume()
+//
+//
+//class Bird {
+//    func fly () {
+//        print("fly")
+//    }
+//
+//    func swim() {
+//        print("Swim")
+//    }
+//}
+//
+//let bird = Bird()
+//bird.fly()
+//bird.swim()
+//
+//
+//class Sparrow: Bird {
+//    override func swim() {
+////        print("sparrow can't swim")
+////        fatalError()
+//    }
+//
+//
+//}
+//
+//let sparrow = Sparrow()
+//sparrow.fly()
+//sparrow.swim()
 
 
-class Bird {
-    func fly () {
-        print("fly")
-    }
+func printMultithreadingTwo (){
+    print("2")
     
-    func swim() {
-        print("Swim")
+    DispatchQueue.main.async {
+        print("3")
+        DispatchQueue.main.async {
+            print("4")
+        }
+        print("5")
     }
+    print("6")
+}
+//print("1")
+//printMultithreadingTwo()
+//print("7")
+
+
+var array = [1,2,3]
+for i in array {
+    print(i)
+    array = [4,5,6]
 }
 
-let bird = Bird()
-bird.fly()
-bird.swim()
-
-
-class Sparrow: Bird {
-    override func swim() {
-//        print("sparrow can't swim")
-//        fatalError()
-    }
-    
-    
-}
-
-let sparrow = Sparrow()
-sparrow.fly()
-sparrow.swim()
+print(array)
