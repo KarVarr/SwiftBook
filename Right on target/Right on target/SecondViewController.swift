@@ -55,9 +55,7 @@ class SecondViewController: UIViewController {
         print("deinit")
     }
     
-    @IBAction func hideCurrentScene() {
-        dismiss(animated: true)
-    }
+   
   
 
 }

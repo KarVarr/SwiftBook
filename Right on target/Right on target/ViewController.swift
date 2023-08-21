@@ -9,72 +9,35 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var game: Game! = nil
+    
     @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!
     
-    lazy var secondViewController: SecondViewController = getSecondViewController()
-    
-    var number: Int = 0
-    var round: Int = 1
-    var points: Int = 0
-    
-    override func loadView() {
-        super.loadView()
-        print(#function)
-    }
-    
+    var updateLabelWithSecretNumber: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(#function)
-        
-        self.number = Int.random(in: 1...50)
-        self.label.text = String(self.number)
+        game = Game(startValue: 1, endValue: 50, rounds: 5)
+        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print(#function)
-    }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print(#function)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print(#function)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print(#function)
+    private func updateLabelWithSecretNumber(newText: String) {
+        label.text = newText
     }
     
     
     @IBAction func checkNumber() {
-        let numSlider = Int(self.slider.value)
-        
-        if numSlider > self.number {
-            self.points += 50 - numSlider + self.number
-        } else if numSlider < self.number {
-            self.points += 50 - self.number + numSlider
+        game.calculateScore(with: Int(self.slider.value))
+        if game.isGameEnded {
+            showAlertWith(score: game.score)
+            game.restartGame()
         } else {
-            self.points += 50
+            game.startNewRound()
         }
-        if self.round == 5 {
-            let alert = UIAlertController(
-                title: "Игра окончена",
-                message: "Вы заработали \(self.points) очков", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Начать заново", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            self.round = 1
-            self.points = 0
-        } else {
-            self.round += 1
-        }
-        self.number = Int.random(in: 1...50)
+        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
     }
     
     private func getSecondViewController() -> SecondViewController {
@@ -84,10 +47,17 @@ class ViewController: UIViewController {
         
     }
     
-    
-    @IBAction func showNextScreen() {
-        present(secondViewController, animated: true)
+    private func showAlertWith(score: Int) {
+        let alert = UIAlertController (
+            title: "Игра окончена",
+            message: "Вы заработали \(score) очков",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Начать заново", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
+    
+    
     
     
 }
