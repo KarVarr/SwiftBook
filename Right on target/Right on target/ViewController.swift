@@ -10,6 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     
     var game: Game! = nil
+    var round: Round! = nil
+    var generator: GeneratorRandomNumber! = nil
     
     @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!
@@ -18,9 +20,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function)
-        game = Game(startValue: 1, endValue: 50, rounds: 5)
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+
+        
+        generator = GeneratorRandomNumber(startRangeValue: 1, endRangeValue: 50)
+        game = Game(valueGenerator: generator, rounds: 5)
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
     
     
@@ -30,22 +34,17 @@ class ViewController: UIViewController {
     
     
     @IBAction func checkNumber() {
-        game.calculateScore(with: Int(self.slider.value))
+        game.currentRound.calculateScore(with:  Int(self.slider.value))
         if game.isGameEnded {
             showAlertWith(score: game.score)
             game.restartGame()
         } else {
             game.startNewRound()
         }
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
     
-    private func getSecondViewController() -> SecondViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier: "SecondViewController")
-        return viewController as! SecondViewController
-        
-    }
+    
     
     private func showAlertWith(score: Int) {
         let alert = UIAlertController (
