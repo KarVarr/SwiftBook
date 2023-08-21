@@ -12,17 +12,17 @@ class ViewController: UIViewController {
     @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!
     
+    lazy var secondViewController: SecondViewController = getSecondViewController()
+    
     var number: Int = 0
     var round: Int = 1
     var points: Int = 0
     
     override func loadView() {
         super.loadView()
-        
-        let versionLabel = UILabel(frame: CGRect(x: 20, y: 10, width: 200, height: 20))
-        versionLabel.text = "Версия 1.1"
-        view.addSubview(versionLabel)
+        print(#function)
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,27 @@ class ViewController: UIViewController {
         self.number = Int.random(in: 1...50)
         self.label.text = String(self.number)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(#function)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(#function)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print(#function)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print(#function)
+    }
+    
     
     @IBAction func checkNumber() {
         let numSlider = Int(self.slider.value)
@@ -55,6 +76,20 @@ class ViewController: UIViewController {
         }
         self.number = Int.random(in: 1...50)
     }
+    
+    private func getSecondViewController() -> SecondViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: "SecondViewController")
+        return viewController as! SecondViewController
+        
+    }
+    
+    
+    @IBAction func showNextScreen() {
+        present(secondViewController, animated: true)
+    }
+    
+    
 }
 
 
