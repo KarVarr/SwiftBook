@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		173459902A90F39C005F5C5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734598F2A90F39C005F5C5A /* AppDelegate.swift */; };
 		173459922A90F39C005F5C5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173459912A90F39C005F5C5A /* SceneDelegate.swift */; };
-		173459942A90F39C005F5C5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173459932A90F39C005F5C5A /* ViewController.swift */; };
+		173459942A90F39C005F5C5A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173459932A90F39C005F5C5A /* MainViewController.swift */; };
 		173459972A90F39C005F5C5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 173459952A90F39C005F5C5A /* Main.storyboard */; };
 		173459992A90F39E005F5C5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 173459982A90F39E005F5C5A /* Assets.xcassets */; };
 		1734599C2A90F39E005F5C5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1734599A2A90F39E005F5C5A /* LaunchScreen.storyboard */; };
@@ -25,7 +25,7 @@
 		1734598C2A90F39C005F5C5A /* Right on target.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Right on target.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1734598F2A90F39C005F5C5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		173459912A90F39C005F5C5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		173459932A90F39C005F5C5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		173459932A90F39C005F5C5A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		173459962A90F39C005F5C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		173459982A90F39E005F5C5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1734599B2A90F39E005F5C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 				173459C42A939E1B005F5C5A /* Model */,
 				1734598F2A90F39C005F5C5A /* AppDelegate.swift */,
 				173459912A90F39C005F5C5A /* SceneDelegate.swift */,
-				173459932A90F39C005F5C5A /* ViewController.swift */,
+				173459932A90F39C005F5C5A /* MainViewController.swift */,
 				173459C22A936F1C005F5C5A /* ColorViewController.swift */,
 				173459952A90F39C005F5C5A /* Main.storyboard */,
 				173459982A90F39E005F5C5A /* Assets.xcassets */,
@@ -168,7 +168,7 @@
 				173459C32A936F1C005F5C5A /* ColorViewController.swift in Sources */,
 				173459CA2A93A989005F5C5A /* GeneratorRandomNumber.swift in Sources */,
 				173459C62A939E43005F5C5A /* Game.swift in Sources */,
-				173459942A90F39C005F5C5A /* ViewController.swift in Sources */,
+				173459942A90F39C005F5C5A /* MainViewController.swift in Sources */,
 				173459CC2A94A79E005F5C5A /* GeneratorRandomColor.swift in Sources */,
 				173459902A90F39C005F5C5A /* AppDelegate.swift in Sources */,
 				173459C82A93A971005F5C5A /* Round.swift in Sources */,

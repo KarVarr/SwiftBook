@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Right on target
 //
 //  Created by Karen Vardanian on 19.08.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     var game: Game! = nil
     var round: Round! = nil
