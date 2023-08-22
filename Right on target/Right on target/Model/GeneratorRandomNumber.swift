@@ -6,13 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 protocol GeneratorProtocol {
-    func getRandomValue() -> Int 
-}
+    func getRandomValue() -> Int}
 
 class GeneratorRandomNumber: GeneratorProtocol {
-    
     private var startRangeValue: Int
     private var endRangeValue: Int
     
@@ -25,6 +24,7 @@ class GeneratorRandomNumber: GeneratorProtocol {
     func getRandomValue() -> Int {
         (startRangeValue...endRangeValue).randomElement()!
     }
+    
     
     
 }
