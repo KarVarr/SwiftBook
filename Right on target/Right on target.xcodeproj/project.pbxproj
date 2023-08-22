@@ -18,6 +18,7 @@
 		173459C82A93A971005F5C5A /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173459C72A93A971005F5C5A /* Round.swift */; };
 		173459CA2A93A989005F5C5A /* GeneratorRandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173459C92A93A989005F5C5A /* GeneratorRandomNumber.swift */; };
 		173459CC2A94A79E005F5C5A /* GeneratorRandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173459CB2A94A79E005F5C5A /* GeneratorRandomColor.swift */; };
+		173459D02A94BE98005F5C5A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173459CF2A94BE98005F5C5A /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		173459C72A93A971005F5C5A /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		173459C92A93A989005F5C5A /* GeneratorRandomNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorRandomNumber.swift; sourceTree = "<group>"; };
 		173459CB2A94A79E005F5C5A /* GeneratorRandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorRandomColor.swift; sourceTree = "<group>"; };
+		173459CF2A94BE98005F5C5A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				173459C72A93A971005F5C5A /* Round.swift */,
 				173459C92A93A989005F5C5A /* GeneratorRandomNumber.swift */,
 				173459CB2A94A79E005F5C5A /* GeneratorRandomColor.swift */,
+				173459CF2A94BE98005F5C5A /* Alert.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				173459D02A94BE98005F5C5A /* Alert.swift in Sources */,
 				173459C32A936F1C005F5C5A /* ColorViewController.swift in Sources */,
 				173459CA2A93A989005F5C5A /* GeneratorRandomNumber.swift in Sources */,
 				173459C62A939E43005F5C5A /* Game.swift in Sources */,

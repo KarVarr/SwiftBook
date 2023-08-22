@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     var game: Game! = nil
     var round: Round! = nil
     var generator: GeneratorRandomNumber! = nil
+    var alertAction: Alert?
     
     @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
         generator = GeneratorRandomNumber(startRangeValue: 1, endRangeValue: 50)
         game = Game(valueGenerator: generator, rounds: 5)
         updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
+        alertAction = Alert()
     }
     
     
@@ -46,14 +48,11 @@ class ViewController: UIViewController {
     
     
     
+    
     private func showAlertWith(score: Int) {
-        let alert = UIAlertController (
-            title: "Игра окончена",
-            message: "Вы заработали \(score) очков",
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "Начать заново", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        if let alert = alertAction {
+            alert.showAlert(self,title: "Игра окончена", message: "Вы заработали \(game.score) очков", titleForButton: "Начать заново")
+        }
     }
     
     

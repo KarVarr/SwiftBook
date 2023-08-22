@@ -20,8 +20,6 @@ protocol GameProtocol {
 
 
 class Game: GameProtocol {
-    
-    
     var score: Int {
         var totalScore: Int = 0
         for round in self.rounds {
