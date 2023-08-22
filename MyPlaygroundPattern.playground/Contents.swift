@@ -93,41 +93,65 @@ struct Message: MessageProtocol {
     var senderID: UInt
 }
 
-protocol StatisticDelegate {
+protocol StatisticDelegate: AnyObject {
     func handle(message: MessageProtocol)
 }
 
 protocol MessengerProtocol {
     var messages: [MessageProtocol] { get set }
     var statisticDelegate: StatisticDelegate? { get set }
+    var dataSource: MessengerDataSourceProtocol? { get set }
+    
     init()
     mutating func receive(message: MessageProtocol)
     mutating func send(message: MessageProtocol)
 }
 
-struct StatisticManager: StatisticDelegate {
+protocol MessengerDataSourceProtocol: AnyObject {
+    func getMessages() -> [MessageProtocol]
+}
+
+class StatisticManager: StatisticDelegate {
     func handle(message: MessageProtocol) {
         print("обработка сообщения от User # \(message.senderID) завершена")
     }
 }
 
-struct Messenger: MessengerProtocol {
-    var messages: [MessageProtocol]
-    var statisticDelegate: StatisticDelegate?
+class Messenger: MessengerProtocol {
+    var dataSource: MessengerDataSourceProtocol? {
+        didSet {
+            if let source = dataSource {
+                messages = source.getMessages()
+            }
+        }
+    }
     
-    init() {
+    var messages: [MessageProtocol]
+    weak var statisticDelegate: StatisticDelegate?
+    
+    required init() {
         messages = []
     }
-    mutating func receive(message: MessageProtocol) {
+    func receive(message: MessageProtocol) {
         statisticDelegate?.handle(message: message)
         messages.append(message)
     }
-    mutating func send(message: MessageProtocol) {
+    func send(message: MessageProtocol) {
         statisticDelegate?.handle(message: message)
         messages.append(message)
     }
 }
 
+extension Messenger: MessengerDataSourceProtocol {
+    func getMessages() -> [MessageProtocol] {
+         [Message(text: "Как дела?", sendDate: Date(), senderID: 2)]
+    }
+}
+
+
+
 var messenger = Messenger()
-messenger.statisticDelegate = StatisticManager()
-messenger.send(message: Message(text: "Привет!", sendDate: Date(), senderID: 1))
+messenger.dataSource = messenger.self
+messenger.getMessages()
+messenger.getMessages()
+messenger.messages.count
