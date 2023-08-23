@@ -55,6 +55,17 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let actionDelete = UIContextualAction(style: .destructive, title: "Удалить") {[unowned self] _,_,_ in
+            self.contacts.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+        let actionChange = UIContextualAction(style: .normal, title: "Изменить") {[unowned self] _,_,_ in
+            self.contacts.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+        let actions = UISwipeActionsConfiguration(actions: [actionChange, actionDelete])
+        return actions
+    }
 }
 
