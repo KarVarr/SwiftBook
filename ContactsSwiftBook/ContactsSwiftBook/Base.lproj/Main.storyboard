@@ -28,7 +28,11 @@
                                 <rect key="frame" x="0.0" y="769" width="393" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="GVx-qt-pZV"/>
-                                    <barButtonItem title="Создать контакт" id="rUY-SM-w92"/>
+                                    <barButtonItem title="Создать контакт" id="rUY-SM-w92">
+                                        <connections>
+                                            <action selector="showNewContactAlert" destination="BYZ-38-t0r" id="EsJ-Ab-Nht"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -44,6 +48,9 @@
                             <constraint firstItem="s9k-uO-fEX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zTC-lT-Y1M"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="s9k-uO-fEX" id="Nnx-xQ-Oem"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
