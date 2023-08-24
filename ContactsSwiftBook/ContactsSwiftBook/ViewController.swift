@@ -20,8 +20,7 @@ class ViewController: UIViewController {
             
         }
     }
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +28,20 @@ class ViewController: UIViewController {
         loadContacts()
     }
     
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if view.traitCollection.horizontalSizeClass == .compact {
+        }
+        
+        if view.traitCollection.verticalSizeClass == .regular {
+        }
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
+        
+        
+    }
     
     
     private func loadContacts() {
