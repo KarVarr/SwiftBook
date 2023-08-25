@@ -7,7 +7,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, DataUpdateProtocol {
+    
     
     @IBOutlet weak var dataLabel: UILabel!
     
@@ -40,6 +41,14 @@ class ViewController: UIViewController {
         destinationController.updatingData = dataLabel.text ?? ""
     }
     
+    func onDataUpdate(data: String) {
+        updatedData = data
+        updateLabel(withText: data)
+    }
+    
+    
+    @IBAction func unwindToFirstScreen(_ segue: UIStoryboardSegue) {}
+    
     
     @IBAction func editDataWithProperty(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -48,6 +57,16 @@ class ViewController: UIViewController {
         editScreen.updatingData = dataLabel.text ?? ""
         
         navigationController?.pushViewController(editScreen as! UIViewController, animated: true)
+    }
+    
+    @IBAction func editDataWithDelegate(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let editScreen = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        
+        editScreen.updatingData = dataLabel.text ?? ""
+        editScreen.handleUpdatedDataDelegate = self
+        
+        self.navigationController?.pushViewController(editScreen, animated: true)
     }
 }
 
