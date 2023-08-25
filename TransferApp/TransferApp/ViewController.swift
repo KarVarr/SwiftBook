@@ -46,6 +46,18 @@ class ViewController: UIViewController, DataUpdateProtocol {
         updateLabel(withText: data)
     }
     
+    @IBAction func editDataWithСlosure(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let editScreen = storyboard.instantiateViewController(withIdentifier:"SecondViewController") as! SecondViewController
+        editScreen.updatingData = dataLabel.text ?? ""
+        
+        editScreen.completionHandler = { [unowned self] updatedValue in
+            updatedData = updatedValue
+            updateLabel(withText: updatedValue) }
+        self.navigationController?.pushViewController(editScreen, animated: true)
+    }
+    
     
     @IBAction func unwindToFirstScreen(_ segue: UIStoryboardSegue) {}
     
