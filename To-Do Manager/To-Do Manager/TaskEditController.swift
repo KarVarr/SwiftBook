@@ -17,6 +17,7 @@ class TaskEditController: UITableViewController {
     
     @IBOutlet var taskTitle: UITextField!
     @IBOutlet var taskTypeLabel: UILabel!
+    @IBOutlet var taskStatusSwitch: UISwitch!
     
     private var taskTitles: [TaskPriority:String] = [.important: "Важная", .normal: "Текущая" ]
     
@@ -25,8 +26,20 @@ class TaskEditController: UITableViewController {
         
         taskTitle?.text = taskText
         taskTypeLabel?.text = taskTitles[taskType]
-        
+        if taskStatus == .completed {
+            taskStatusSwitch.isOn = true
+        }
     }
+    
+    @IBAction func saveTask(_ sender: UIBarButtonItem) {
+        let title = taskTitle?.text ?? ""
+        let type = taskType
+        let status: TaskStatus = taskStatusSwitch.isOn ? .completed : .planned
+        doAfterEdit?(title, type, status)
+        navigationController?.popViewController(animated: true)
+    }
+    
+
     
     // MARK: - Table view data source
     
