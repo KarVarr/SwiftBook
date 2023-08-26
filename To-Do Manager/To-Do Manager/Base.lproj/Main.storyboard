@@ -106,35 +106,75 @@
             </objects>
             <point key="canvasLocation" x="1668" y="4"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Task Edit Controller-->
         <scene sceneID="RFs-Ll-4lv">
             <objects>
-                <tableViewController id="g1D-AL-2OE" sceneMemberID="viewController">
+                <tableViewController id="g1D-AL-2OE" customClass="TaskEditController" customModule="To_Do_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="fzf-QJ-BOE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Section-1" id="o3G-zP-UBc">
+                            <tableViewSection id="o3G-zP-UBc">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RgS-3p-cVR">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="18" width="393" height="44.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RgS-3p-cVR" id="VSR-6e-Vuz">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="44.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введите задачу" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2zb-ba-D5k">
+                                                    <rect key="frame" x="20" y="10.999999999999998" width="353" height="22.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2zb-ba-D5k" firstAttribute="top" secondItem="VSR-6e-Vuz" secondAttribute="topMargin" id="Pg0-vg-75d"/>
+                                                <constraint firstItem="2zb-ba-D5k" firstAttribute="leading" secondItem="VSR-6e-Vuz" secondAttribute="leadingMargin" id="naP-pG-gFY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2zb-ba-D5k" secondAttribute="bottom" id="seY-Pr-tyF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2zb-ba-D5k" secondAttribute="trailing" id="zBy-9x-21o"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="OOt-CB-0ai">
-                                        <rect key="frame" x="0.0" y="99" width="393" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="OOt-CB-0ai">
+                                        <rect key="frame" x="0.0" y="62.333332061767578" width="393" height="42.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OOt-CB-0ai" id="P5g-hu-4Ee">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="42.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Тип задачи" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWV-yO-yxt">
+                                                    <rect key="frame" x="20" y="10.999999999999998" width="90" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeL-vu-PYE">
+                                                    <rect key="frame" x="109.99999999999999" y="10.999999999999998" width="244.66666666666663" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemGrayColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="JeL-vu-PYE" secondAttribute="bottom" id="3F9-yS-16r"/>
+                                                <constraint firstItem="JeL-vu-PYE" firstAttribute="leading" secondItem="KWV-yO-yxt" secondAttribute="trailing" id="3Jr-mm-n8o"/>
+                                                <constraint firstItem="JeL-vu-PYE" firstAttribute="top" secondItem="P5g-hu-4Ee" secondAttribute="topMargin" id="3dd-fm-N8v"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="JeL-vu-PYE" secondAttribute="trailing" id="7pK-Qo-cMc"/>
+                                                <constraint firstItem="KWV-yO-yxt" firstAttribute="leading" secondItem="P5g-hu-4Ee" secondAttribute="leadingMargin" id="EFt-yn-PFj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="KWV-yO-yxt" secondAttribute="bottom" id="oV6-WJ-wac"/>
+                                                <constraint firstItem="JeL-vu-PYE" firstAttribute="leading" secondItem="KWV-yO-yxt" secondAttribute="trailing" id="rQR-Pr-8WW"/>
+                                                <constraint firstItem="KWV-yO-yxt" firstAttribute="top" secondItem="P5g-hu-4Ee" secondAttribute="topMargin" id="vLV-yL-3ww"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="v7A-Xe-P6b" kind="presentation" id="Puz-Ic-7W5"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sXA-js-0lN">
-                                        <rect key="frame" x="0.0" y="142.66666793823242" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="104.66666412353516" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sXA-js-0lN" id="tcH-h8-6dL">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
@@ -150,10 +190,33 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="5qY-w1-xlv"/>
+                    <connections>
+                        <outlet property="taskTitle" destination="2zb-ba-D5k" id="gJv-9Z-XBV"/>
+                        <outlet property="taskTypeLabel" destination="JeL-vu-PYE" id="bxG-Kg-hjc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HeH-Jh-K2F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2460" y="4"/>
+        </scene>
+        <!--Task Type Controller-->
+        <scene sceneID="3kX-eG-PSf">
+            <objects>
+                <tableViewController id="v7A-Xe-P6b" customClass="TaskTypeController" customModule="To_Do_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="tAj-zY-zQS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="v7A-Xe-P6b" id="vvL-07-fHN"/>
+                            <outlet property="delegate" destination="v7A-Xe-P6b" id="Be7-KR-c9p"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="z9J-Oc-iTA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R78-AP-Zpe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3234" y="4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8DK-Fx-Y6z">
@@ -175,6 +238,12 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

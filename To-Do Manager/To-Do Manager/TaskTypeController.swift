@@ -1,5 +1,5 @@
 //
-//  TaskEditController.swift
+//  TaskTypeController.swift
 //  To-Do Manager
 //
 //  Created by Karen Vardanian on 26.08.2023.
@@ -7,37 +7,23 @@
 
 import UIKit
 
-class TaskEditController: UITableViewController {
-    
-    var taskText: String = ""
-    var taskType: TaskPriority = .normal
-    var taskStatus: TaskStatus = .planned
-    
-    var doAfterEdit: ((String, TaskPriority, TaskStatus) -> Void)?
-    
-    @IBOutlet var taskTitle: UITextField!
-    @IBOutlet var taskTypeLabel: UILabel!
-    
-    private var taskTitles: [TaskPriority:String] = [.important: "Важная", .normal: "Текущая" ]
+class TaskTypeController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        taskTitle?.text = taskText
-        taskTypeLabel?.text = taskTitles[taskType]
-        
+
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 0
     }
 
     /*
