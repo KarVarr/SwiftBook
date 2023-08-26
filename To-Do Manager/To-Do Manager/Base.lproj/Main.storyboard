@@ -57,14 +57,17 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qDJ-L2-Dni">
                                             <rect key="frame" x="20" y="11.000000000000002" width="313" height="20.666666666666671"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDy-RK-vGU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.666666666666668"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDy-RK-vGU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20.666666666666668"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="K2l-e4-IIv"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbY-Vd-3pV">
-                                                    <rect key="frame" x="51.333333333333343" y="0.0" width="261.66666666666663" height="20.666666666666668"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbY-Vd-3pV">
+                                                    <rect key="frame" x="30" y="0.0" width="283" height="20.666666666666668"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -80,8 +83,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="symbol" destination="yDy-RK-vGU" id="JIY-Rt-FpP"/>
-                                    <outlet property="title" destination="SbY-Vd-3pV" id="xlL-yh-QJ8"/>
+                                    <outlet property="symbol" destination="yDy-RK-vGU" id="foU-H8-V2m"/>
+                                    <outlet property="title" destination="SbY-Vd-3pV" id="d2P-Eu-HxJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

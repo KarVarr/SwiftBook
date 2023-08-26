@@ -10,18 +10,20 @@ import UIKit
 class TaskListController: UITableViewController {
     
     var tasksStorage: TasksStorageProtocol = TasksStorage()
-    var tasks: [TaskPriority:[TaskProtocol]] = [:]
+    var tasks: [TaskPriority:[TaskProtocol]] = [:] {
+        didSet {
+            for (tasksGroupPriority, tasksGroup) in tasks { tasks[tasksGroupPriority] = tasksGroup.sorted{ task1, task2 in
+                let task1position = tasksStatusPosition.firstIndex(of: task1.status) ?? 0
+                let task2position = tasksStatusPosition.firstIndex(of: task2.status) ?? 0
+                return task1position < task2position }
+            }
+        }
+    }
     var sectionsTypesPosition: [TaskPriority] = [.important, .normal]
+    var tasksStatusPosition: [TaskStatus] = [.planned, .completed]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
         
         loadTasks()
     }
@@ -33,17 +35,20 @@ class TaskListController: UITableViewController {
         tasksStorage.loadTasks().forEach { task in
             tasks[task.type]?.append(task)
         }
+        
+        
     }
+    
+    
     
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return tasks.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
         let taskType = sectionsTypesPosition[section]
         guard let currentTasksType = tasks[taskType] else { return 0 }
         return currentTasksType.count
@@ -67,9 +72,29 @@ class TaskListController: UITableViewController {
             textLabel?.textColor = .lightGray
             symbolLabel?.textColor = .lightGray
         }
+        //        return getConfiguredTaskCell_stack(for: indexPath)
         return cell
     }
     
+    
+    private func getConfiguredTaskCell_stack(for indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCellStack", for: indexPath) as! TaskCell
+        let taskType = sectionsTypesPosition[indexPath.section]
+        guard let currentTask = tasks[taskType]?[indexPath.row] else { return cell }
+        
+        cell.title.text = currentTask.title
+        cell.symbol.text = getSymbolForTask(with: currentTask.status)
+        
+        if currentTask.status == .planned {
+            cell.title.textColor = .black
+            cell.symbol.textColor = .black
+        } else {
+            cell.title.textColor = .lightGray
+            cell.symbol.textColor = .lightGray
+        }
+        return cell
+    }
     
     private func getSymbolForTask(with status: TaskStatus) -> String {
         var resultSymbol: String
@@ -91,6 +116,20 @@ class TaskListController: UITableViewController {
             title = "Важные"
         } else if tasksType == .normal {
             title = "Текущие" }
-        return title }
+        return title
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let taskType = sectionsTypesPosition[indexPath.section]
+        guard let _ = tasks[taskType]?[indexPath.row] else { return }
+        
+        guard tasks[taskType]![indexPath.row].status == .planned else {
+            tableView.deselectRow(at: indexPath, animated: true)
+            return
+        }
+        tasks[taskType]![indexPath.row].status = .completed
+        tableView.reloadSections(IndexSet(arrayLiteral: indexPath.section),with: .automatic)
+    }
     
 }
