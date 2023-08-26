@@ -16,6 +16,7 @@
 		17D508AB2A98EE8B001B17D9 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D508AA2A98EE8B001B17D9 /* Task.swift */; };
 		17D508AD2A98F06A001B17D9 /* TasksStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D508AC2A98F06A001B17D9 /* TasksStorage.swift */; };
 		17D508B12A99F6D9001B17D9 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D508B02A99F6D9001B17D9 /* TaskCell.swift */; };
+		17D508B32A9A39F8001B17D9 /* TaskEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D508B22A9A39F8001B17D9 /* TaskEditController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		17D508AA2A98EE8B001B17D9 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		17D508AC2A98F06A001B17D9 /* TasksStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksStorage.swift; sourceTree = "<group>"; };
 		17D508B02A99F6D9001B17D9 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		17D508B22A9A39F8001B17D9 /* TaskEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				17D508932A98EAFC001B17D9 /* AppDelegate.swift */,
 				17D508952A98EAFC001B17D9 /* SceneDelegate.swift */,
 				17D508A72A98ED70001B17D9 /* TaskListController.swift */,
+				17D508B22A9A39F8001B17D9 /* TaskEditController.swift */,
 				17D508992A98EAFC001B17D9 /* Main.storyboard */,
 				17D5089C2A98EAFE001B17D9 /* Assets.xcassets */,
 				17D5089E2A98EAFE001B17D9 /* LaunchScreen.storyboard */,
@@ -177,6 +180,7 @@
 				17D508962A98EAFC001B17D9 /* SceneDelegate.swift in Sources */,
 				17D508B12A99F6D9001B17D9 /* TaskCell.swift in Sources */,
 				17D508A82A98ED70001B17D9 /* TaskListController.swift in Sources */,
+				17D508B32A9A39F8001B17D9 /* TaskEditController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
