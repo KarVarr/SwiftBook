@@ -13,12 +13,15 @@ class MyViewController : UIViewController {
         let redView = getRedView()
         let greenView = getGreenView()
         let whiteView = getWhiteView()
+        let pinkView = getPinkView()
         set(view: greenView, toCenterOfView: redView)
         whiteView.center = greenView.center
+        
         
         self.view.addSubview( redView )
         redView.addSubview( greenView )
         redView.addSubview( whiteView )
+        self.view.addSubview(pinkView)
     }
     private func getRootView() -> UIView {
         let view = UIView()
@@ -48,17 +51,26 @@ class MyViewController : UIViewController {
         return view
     }
     
+    private func getPinkView() -> UIView {
+        let viewFrame = CGRect(x: 50, y: 300, width: 100, height: 100)
+        let view = UIView(frame: viewFrame)
+        view.backgroundColor = .systemPink
+        view.layer.shadowOpacity = 0.5
+        view.bounds = CGRect(x: 0, y: 0, width: 100, height: 100)
+        view.layer.borderWidth = 1
+        
+        let layer = CALayer()
+        layer.backgroundColor  = UIColor.black.cgColor
+        layer.frame = CGRect(x: 10, y: 10, width: 20, height: 20)
+        layer.cornerRadius = 10
+        view.layer.addSublayer(layer)
+
+        return view
+    }
+    
     
     private func set(view moveView: UIView, toCenterOfView baseView: UIView){
-        let moveViewWidth = moveView.frame.width
-        let moveViewHeight = moveView.frame.height
-        
-        let baseViewWidth = baseView.frame.width
-        let baseViewHeight = baseView.frame.height
-        
-        let newXCoordinate = (baseViewWidth - moveViewWidth) / 2
-        let newYCoordinate = (baseViewHeight - moveViewHeight) / 2
-        moveView.frame.origin = CGPoint(x: newXCoordinate, y: newYCoordinate)
+        moveView.center = CGPoint(x: baseView.bounds.midX, y: baseView.bounds.midY)
     }
 }
 
