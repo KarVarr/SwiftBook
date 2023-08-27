@@ -50,23 +50,42 @@ class MyViewController : UIViewController {
 //        let path = UIBezierPath(ovalIn: CGRect(x: 10, y: 10, width: 100, height: 100))
 //        let path = UIBezierPath(arcCenter: centerPoint, radius: 150, startAngle: .pi * 2, endAngle: .pi , clockwise: true)
 //
+        //шляпа повора
+//        let path = UIBezierPath()
+//        path.move(to: CGPoint(x: 100, y: 100))
+//        path.addArc(withCenter: CGPoint(x: 150, y: 100), radius: 50,
+//        startAngle: .pi, endAngle: 0, clockwise: true)
+//        path.addLine(to: CGPoint(x: 220, y: 100))
+//        path.addArc(withCenter: CGPoint(x: 220, y: 150), radius: 50,
+//        startAngle: .pi*3/2, endAngle: .pi/2, clockwise: true)
+//        path.addLine(to: CGPoint(x: 200, y: 200))
+//        path.addLine(to: CGPoint(x: 200, y: 260))
+//        path.addLine(to: CGPoint(x: 100, y: 260))
+//        path.addLine(to: CGPoint(x: 100, y: 200))
+//        path.addLine(to: CGPoint(x: 80, y: 200))
+//        path.addArc(withCenter: CGPoint(x: 80, y: 150),
+//        radius: 50,
+//        startAngle: .pi/2, endAngle: .pi*3/2, clockwise: true)
+//        path.close()
         
+        //chatGPT не справился с кружкой и ложной...
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: 100, y: 100))
-        path.addArc(withCenter: CGPoint(x: 150, y: 100), radius: 50,
-        startAngle: .pi, endAngle: 0, clockwise: true)
-        path.addLine(to: CGPoint(x: 220, y: 100))
-        path.addArc(withCenter: CGPoint(x: 220, y: 150), radius: 50,
-        startAngle: .pi*3/2, endAngle: .pi/2, clockwise: true)
-        path.addLine(to: CGPoint(x: 200, y: 200))
-        path.addLine(to: CGPoint(x: 200, y: 260))
-        path.addLine(to: CGPoint(x: 100, y: 260))
-        path.addLine(to: CGPoint(x: 100, y: 200))
-        path.addLine(to: CGPoint(x: 80, y: 200))
-        path.addArc(withCenter: CGPoint(x: 80, y: 150),
-        radius: 50,
-        startAngle: .pi/2, endAngle: .pi*3/2, clockwise: true)
-        path.close()
+           
+           // Рисуем круг (кружка)
+           let centerPoint = CGPoint(x: 150, y: 150)
+           path.addArc(withCenter: centerPoint, radius: 100, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
+           
+           // Рисуем ручку (прямоугольник)
+           path.move(to: CGPoint(x: 180, y: 150))
+           path.addLine(to: CGPoint(x: 220, y: 150))
+           
+           // Рисуем ложку (кривая Безье)
+           path.move(to: CGPoint(x: 180, y: 120))
+           path.addQuadCurve(to: CGPoint(x: 200, y: 90), controlPoint: CGPoint(x: 220, y: 110))
+           path.addQuadCurve(to: CGPoint(x: 220, y: 120), controlPoint: CGPoint(x: 220, y: 100))
+           
+           path.close()
+           
         return path
     }
 }
