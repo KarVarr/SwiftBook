@@ -10,9 +10,13 @@ class MyViewController : UIViewController {
         view.backgroundColor = .white
         self.view = view
         
-
+        
         let firstCardView = CardView<CircleShape>(frame: CGRect(x: 0, y: 0, width: 120, height: 150), color: .red)
         self.view.addSubview(firstCardView)
+        
+        let secondCardView = CardView<CircleShape>(frame: CGRect(x: 200, y: 0, width: 120, height: 150), color: .red)
+        self.view.addSubview(secondCardView)
+        secondCardView.isFlipped = true
     }
 }
 
@@ -164,7 +168,11 @@ class BackSideLine: CAShapeLayer, ShapeLayerProtocol {
 
 class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableView {
     
-    var isFlipped: Bool = true
+    var isFlipped: Bool = false {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
     var flipCompletionHandler: ((FlippableView) -> Void)?
     lazy var frontSideView: UIView = self.getFrontSideView()
     lazy var backSideView: UIView = self.getBackSideView()
@@ -185,6 +193,19 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableView {
         
         setupBorders()
     }
+    
+    override func draw(_ rect: CGRect) { backSideView.removeFromSuperview()
+        frontSideView.removeFromSuperview()
+        
+        if isFlipped {
+            self.addSubview(backSideView)
+            self.addSubview(frontSideView)
+        } else {
+            self.addSubview(frontSideView)
+            self.addSubview(backSideView)
+        }
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
