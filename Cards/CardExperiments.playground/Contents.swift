@@ -18,6 +18,8 @@ class MyViewController : UIViewController {
         self.view.addSubview(secondCardView)
         secondCardView.isFlipped = true
     }
+    
+
 }
 
 
@@ -180,6 +182,8 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableView {
     var color: UIColor!
     var cornerRadius = 20
     
+    private var anchorPoints: CGPoint = CGPoint(x: 0, y: 0)
+    
     init(frame: CGRect, color: UIColor) {
         super.init(frame: frame)
         self.color = color
@@ -193,6 +197,17 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableView {
         
         setupBorders()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        anchorPoints.x = touches.first!.location(in: window).x - frame.minX
+        anchorPoints.y = touches.first!.location(in: window).y - frame.minY
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.frame.origin.x = touches.first!.location(in: window).x - anchorPoints.x
+        self.frame.origin.y = touches.first!.location(in: window).y - anchorPoints.y
+    }
+    
     
     override func draw(_ rect: CGRect) { backSideView.removeFromSuperview()
         frontSideView.removeFromSuperview()
@@ -252,7 +267,16 @@ class CardView<ShapeType: ShapeLayerProtocol>: UIView, FlippableView {
         return view
     }
     
+ 
 }
 
 
-
+extension UIResponder {
+    func responderChain() -> String {
+        guard let next = next else {
+            return String(describing: Self.self)
+        }
+        return String(describing: Self.self) + " -> " + next.responderChain()
+    }
+    
+}
