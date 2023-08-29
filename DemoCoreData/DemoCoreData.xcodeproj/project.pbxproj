@@ -7,38 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17F8FD472A9B677700DB0460 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F8FD462A9B677700DB0460 /* AppDelegate.swift */; };
-		17F8FD492A9B677700DB0460 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F8FD482A9B677700DB0460 /* SceneDelegate.swift */; };
-		17F8FD4E2A9B677700DB0460 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F8FD4C2A9B677700DB0460 /* Main.storyboard */; };
-		17F8FD502A9B677900DB0460 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F8FD4F2A9B677900DB0460 /* Assets.xcassets */; };
-		17F8FD532A9B677900DB0460 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F8FD512A9B677900DB0460 /* LaunchScreen.storyboard */; };
-		17F8FD612A9D0D8A00DB0460 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F8FD602A9D0D8A00DB0460 /* Shapes.swift */; };
-		17F8FD632A9D0DD100DB0460 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F8FD622A9D0DD100DB0460 /* Cards.swift */; };
-		17F8FD672A9D0ECA00DB0460 /* BoardGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F8FD662A9D0ECA00DB0460 /* BoardGameController.swift */; };
-		17F8FD6A2A9D0FDE00DB0460 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F8FD692A9D0FDE00DB0460 /* Card.swift */; };
-		17F8FD6C2A9D10FB00DB0460 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F8FD6B2A9D10FB00DB0460 /* Game.swift */; };
-		17F8FD6F2A9D19ED00DB0460 /* CardViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F8FD6E2A9D19ED00DB0460 /* CardViewFactory.swift */; };
+		17F8FD7E2A9E3A6E00DB0460 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F8FD7D2A9E3A6E00DB0460 /* AppDelegate.swift */; };
+		17F8FD802A9E3A6E00DB0460 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F8FD7F2A9E3A6E00DB0460 /* SceneDelegate.swift */; };
+		17F8FD822A9E3A6E00DB0460 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F8FD812A9E3A6E00DB0460 /* ViewController.swift */; };
+		17F8FD852A9E3A6E00DB0460 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F8FD832A9E3A6E00DB0460 /* Main.storyboard */; };
+		17F8FD882A9E3A6E00DB0460 /* DemoCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17F8FD862A9E3A6E00DB0460 /* DemoCoreData.xcdatamodeld */; };
+		17F8FD8A2A9E3A7000DB0460 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F8FD892A9E3A7000DB0460 /* Assets.xcassets */; };
+		17F8FD8D2A9E3A7000DB0460 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F8FD8B2A9E3A7000DB0460 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		17F8FD432A9B677700DB0460 /* Cards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cards.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		17F8FD462A9B677700DB0460 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		17F8FD482A9B677700DB0460 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		17F8FD4D2A9B677700DB0460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		17F8FD4F2A9B677900DB0460 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		17F8FD522A9B677900DB0460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		17F8FD542A9B677900DB0460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17F8FD602A9D0D8A00DB0460 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
-		17F8FD622A9D0DD100DB0460 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
-		17F8FD662A9D0ECA00DB0460 /* BoardGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGameController.swift; sourceTree = "<group>"; };
-		17F8FD692A9D0FDE00DB0460 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		17F8FD6B2A9D10FB00DB0460 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		17F8FD6E2A9D19ED00DB0460 /* CardViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewFactory.swift; sourceTree = "<group>"; };
-		17F8FD702A9DE04200DB0460 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		17F8FD7A2A9E3A6E00DB0460 /* DemoCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17F8FD7D2A9E3A6E00DB0460 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		17F8FD7F2A9E3A6E00DB0460 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		17F8FD812A9E3A6E00DB0460 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		17F8FD842A9E3A6E00DB0460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		17F8FD872A9E3A6E00DB0460 /* DemoCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DemoCoreData.xcdatamodel; sourceTree = "<group>"; };
+		17F8FD892A9E3A7000DB0460 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		17F8FD8C2A9E3A7000DB0460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		17F8FD8E2A9E3A7000DB0460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		17F8FD402A9B677700DB0460 /* Frameworks */ = {
+		17F8FD772A9E3A6E00DB0460 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -48,118 +39,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		17F8FD3A2A9B677700DB0460 = {
+		17F8FD712A9E3A6E00DB0460 = {
 			isa = PBXGroup;
 			children = (
-				17F8FD702A9DE04200DB0460 /* MyPlayground.playground */,
-				17F8FD452A9B677700DB0460 /* Cards */,
-				17F8FD442A9B677700DB0460 /* Products */,
+				17F8FD7C2A9E3A6E00DB0460 /* DemoCoreData */,
+				17F8FD7B2A9E3A6E00DB0460 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		17F8FD442A9B677700DB0460 /* Products */ = {
+		17F8FD7B2A9E3A6E00DB0460 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				17F8FD432A9B677700DB0460 /* Cards.app */,
+				17F8FD7A2A9E3A6E00DB0460 /* DemoCoreData.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		17F8FD452A9B677700DB0460 /* Cards */ = {
+		17F8FD7C2A9E3A6E00DB0460 /* DemoCoreData */ = {
 			isa = PBXGroup;
 			children = (
-				17F8FD6D2A9D19D900DB0460 /* Helpers */,
-				17F8FD682A9D0EE400DB0460 /* Model */,
-				17F8FD652A9D0E9800DB0460 /* Controller */,
-				17F8FD5D2A9D0D2500DB0460 /* View */,
-				17F8FD462A9B677700DB0460 /* AppDelegate.swift */,
-				17F8FD482A9B677700DB0460 /* SceneDelegate.swift */,
-				17F8FD4F2A9B677900DB0460 /* Assets.xcassets */,
-				17F8FD512A9B677900DB0460 /* LaunchScreen.storyboard */,
-				17F8FD542A9B677900DB0460 /* Info.plist */,
+				17F8FD7D2A9E3A6E00DB0460 /* AppDelegate.swift */,
+				17F8FD7F2A9E3A6E00DB0460 /* SceneDelegate.swift */,
+				17F8FD812A9E3A6E00DB0460 /* ViewController.swift */,
+				17F8FD832A9E3A6E00DB0460 /* Main.storyboard */,
+				17F8FD892A9E3A7000DB0460 /* Assets.xcassets */,
+				17F8FD8B2A9E3A7000DB0460 /* LaunchScreen.storyboard */,
+				17F8FD8E2A9E3A7000DB0460 /* Info.plist */,
+				17F8FD862A9E3A6E00DB0460 /* DemoCoreData.xcdatamodeld */,
 			);
-			path = Cards;
-			sourceTree = "<group>";
-		};
-		17F8FD5D2A9D0D2500DB0460 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				17F8FD602A9D0D8A00DB0460 /* Shapes.swift */,
-				17F8FD622A9D0DD100DB0460 /* Cards.swift */,
-				17F8FD642A9D0E7600DB0460 /* Storyboards */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		17F8FD642A9D0E7600DB0460 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				17F8FD4C2A9B677700DB0460 /* Main.storyboard */,
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		17F8FD652A9D0E9800DB0460 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				17F8FD662A9D0ECA00DB0460 /* BoardGameController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		17F8FD682A9D0EE400DB0460 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				17F8FD692A9D0FDE00DB0460 /* Card.swift */,
-				17F8FD6B2A9D10FB00DB0460 /* Game.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		17F8FD6D2A9D19D900DB0460 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				17F8FD6E2A9D19ED00DB0460 /* CardViewFactory.swift */,
-			);
-			path = Helpers;
+			path = DemoCoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		17F8FD422A9B677700DB0460 /* Cards */ = {
+		17F8FD792A9E3A6E00DB0460 /* DemoCoreData */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17F8FD572A9B677900DB0460 /* Build configuration list for PBXNativeTarget "Cards" */;
+			buildConfigurationList = 17F8FD912A9E3A7000DB0460 /* Build configuration list for PBXNativeTarget "DemoCoreData" */;
 			buildPhases = (
-				17F8FD3F2A9B677700DB0460 /* Sources */,
-				17F8FD402A9B677700DB0460 /* Frameworks */,
-				17F8FD412A9B677700DB0460 /* Resources */,
+				17F8FD762A9E3A6E00DB0460 /* Sources */,
+				17F8FD772A9E3A6E00DB0460 /* Frameworks */,
+				17F8FD782A9E3A6E00DB0460 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Cards;
-			productName = Cards;
-			productReference = 17F8FD432A9B677700DB0460 /* Cards.app */;
+			name = DemoCoreData;
+			productName = DemoCoreData;
+			productReference = 17F8FD7A2A9E3A6E00DB0460 /* DemoCoreData.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		17F8FD3B2A9B677700DB0460 /* Project object */ = {
+		17F8FD722A9E3A6E00DB0460 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					17F8FD422A9B677700DB0460 = {
+					17F8FD792A9E3A6E00DB0460 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 17F8FD3E2A9B677700DB0460 /* Build configuration list for PBXProject "Cards" */;
+			buildConfigurationList = 17F8FD752A9E3A6E00DB0460 /* Build configuration list for PBXProject "DemoCoreData" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -167,60 +113,56 @@
 				en,
 				Base,
 			);
-			mainGroup = 17F8FD3A2A9B677700DB0460;
-			productRefGroup = 17F8FD442A9B677700DB0460 /* Products */;
+			mainGroup = 17F8FD712A9E3A6E00DB0460;
+			productRefGroup = 17F8FD7B2A9E3A6E00DB0460 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				17F8FD422A9B677700DB0460 /* Cards */,
+				17F8FD792A9E3A6E00DB0460 /* DemoCoreData */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		17F8FD412A9B677700DB0460 /* Resources */ = {
+		17F8FD782A9E3A6E00DB0460 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17F8FD532A9B677900DB0460 /* LaunchScreen.storyboard in Resources */,
-				17F8FD502A9B677900DB0460 /* Assets.xcassets in Resources */,
-				17F8FD4E2A9B677700DB0460 /* Main.storyboard in Resources */,
+				17F8FD8D2A9E3A7000DB0460 /* LaunchScreen.storyboard in Resources */,
+				17F8FD8A2A9E3A7000DB0460 /* Assets.xcassets in Resources */,
+				17F8FD852A9E3A6E00DB0460 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		17F8FD3F2A9B677700DB0460 /* Sources */ = {
+		17F8FD762A9E3A6E00DB0460 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17F8FD672A9D0ECA00DB0460 /* BoardGameController.swift in Sources */,
-				17F8FD6A2A9D0FDE00DB0460 /* Card.swift in Sources */,
-				17F8FD6C2A9D10FB00DB0460 /* Game.swift in Sources */,
-				17F8FD632A9D0DD100DB0460 /* Cards.swift in Sources */,
-				17F8FD472A9B677700DB0460 /* AppDelegate.swift in Sources */,
-				17F8FD6F2A9D19ED00DB0460 /* CardViewFactory.swift in Sources */,
-				17F8FD492A9B677700DB0460 /* SceneDelegate.swift in Sources */,
-				17F8FD612A9D0D8A00DB0460 /* Shapes.swift in Sources */,
+				17F8FD822A9E3A6E00DB0460 /* ViewController.swift in Sources */,
+				17F8FD882A9E3A6E00DB0460 /* DemoCoreData.xcdatamodeld in Sources */,
+				17F8FD7E2A9E3A6E00DB0460 /* AppDelegate.swift in Sources */,
+				17F8FD802A9E3A6E00DB0460 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		17F8FD4C2A9B677700DB0460 /* Main.storyboard */ = {
+		17F8FD832A9E3A6E00DB0460 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				17F8FD4D2A9B677700DB0460 /* Base */,
+				17F8FD842A9E3A6E00DB0460 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		17F8FD512A9B677900DB0460 /* LaunchScreen.storyboard */ = {
+		17F8FD8B2A9E3A7000DB0460 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				17F8FD522A9B677900DB0460 /* Base */,
+				17F8FD8C2A9E3A7000DB0460 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -228,7 +170,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		17F8FD552A9B677900DB0460 /* Debug */ = {
+		17F8FD8F2A9E3A7000DB0460 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -288,7 +230,7 @@
 			};
 			name = Debug;
 		};
-		17F8FD562A9B677900DB0460 /* Release */ = {
+		17F8FD902A9E3A7000DB0460 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -342,7 +284,7 @@
 			};
 			name = Release;
 		};
-		17F8FD582A9B677900DB0460 /* Debug */ = {
+		17F8FD922A9E3A7000DB0460 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -351,7 +293,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LA9F8MT28T;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Cards/Info.plist;
+				INFOPLIST_FILE = DemoCoreData/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -362,7 +304,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.karen.Cards;
+				PRODUCT_BUNDLE_IDENTIFIER = com.karen.DemoCoreData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -370,7 +312,7 @@
 			};
 			name = Debug;
 		};
-		17F8FD592A9B677900DB0460 /* Release */ = {
+		17F8FD932A9E3A7000DB0460 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -379,7 +321,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LA9F8MT28T;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Cards/Info.plist;
+				INFOPLIST_FILE = DemoCoreData/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -390,7 +332,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.karen.Cards;
+				PRODUCT_BUNDLE_IDENTIFIER = com.karen.DemoCoreData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -401,25 +343,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		17F8FD3E2A9B677700DB0460 /* Build configuration list for PBXProject "Cards" */ = {
+		17F8FD752A9E3A6E00DB0460 /* Build configuration list for PBXProject "DemoCoreData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				17F8FD552A9B677900DB0460 /* Debug */,
-				17F8FD562A9B677900DB0460 /* Release */,
+				17F8FD8F2A9E3A7000DB0460 /* Debug */,
+				17F8FD902A9E3A7000DB0460 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17F8FD572A9B677900DB0460 /* Build configuration list for PBXNativeTarget "Cards" */ = {
+		17F8FD912A9E3A7000DB0460 /* Build configuration list for PBXNativeTarget "DemoCoreData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				17F8FD582A9B677900DB0460 /* Debug */,
-				17F8FD592A9B677900DB0460 /* Release */,
+				17F8FD922A9E3A7000DB0460 /* Debug */,
+				17F8FD932A9E3A7000DB0460 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		17F8FD862A9E3A6E00DB0460 /* DemoCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				17F8FD872A9E3A6E00DB0460 /* DemoCoreData.xcdatamodel */,
+			);
+			currentVersion = 17F8FD872A9E3A6E00DB0460 /* DemoCoreData.xcdatamodel */;
+			path = DemoCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = 17F8FD3B2A9B677700DB0460 /* Project object */;
+	rootObject = 17F8FD722A9E3A6E00DB0460 /* Project object */;
 }

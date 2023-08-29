@@ -124,7 +124,8 @@ class BoardGameController: UIViewController {
             cardTwo.tag = index
             cardViews.append(cardTwo) }
         for card in cardViews {
-            (card as! FlippableView).flipCompletionHandler = { flippedCard in  flippedCard.superview?.bringSubviewToFront(flippedCard)
+            (card as! FlippableView).flipCompletionHandler = {
+                flippedCard in  flippedCard.superview?.bringSubviewToFront(flippedCard)
             }
         }
         
