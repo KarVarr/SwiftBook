@@ -6,19 +6,15 @@
 //
 
 import UIKit
+import CoreData
 
 class TableViewController: UITableViewController {
     
-    var tasks: [String] = []
+    var tasks: [Task] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     @IBAction func saveTask(_ sender: UIBarButtonItem) {
@@ -26,13 +22,35 @@ class TableViewController: UITableViewController {
         let saveAction = UIAlertAction(title: "Save", style: .default) {[unowned self] action in
             let tf = ac.textFields?.first
             if let newTask = tf?.text {
-                self.tasks.insert(newTask, at: 0)
+                self.saveTaskCD(withTitle: newTask)
+                self.tableView.reloadData()
             }
         }
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-            ac.addAction(cancelAction)
-            ac.addAction(saveAction)
-            present(ac, animated: true)
+        ac.addTextField{ text in
+            text.placeholder = "Write something here"
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        ac.addAction(cancelAction)
+        ac.addAction(saveAction)
+        present(ac, animated: true)
+    }
+    
+    private func saveTaskCD(withTitle title: String) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        guard let entity = NSEntityDescription.entity(forEntityName: "Task", in: context) else { return }
+        
+        let taskObject = Task(entity: entity, insertInto: context)
+        taskObject.title = title
+        
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
     }
     
     // MARK: - Table view data source
@@ -51,7 +69,8 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.textLabel?.text = tasks[indexPath.row]
+        let task = tasks[indexPath.row]
+        cell.textLabel?.text = task.title
         
         return cell
     }
