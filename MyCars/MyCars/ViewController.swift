@@ -13,6 +13,13 @@ class ViewController: UIViewController {
     
     var context: NSManagedObjectContext!
     
+    lazy var dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateStyle = .short
+        df.timeStyle = .none
+        return df
+    }()
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var markLabel: UILabel!
     @IBOutlet weak var modelLabel: UILabel!
@@ -34,7 +41,31 @@ class ViewController: UIViewController {
         
     }
     
+    private func insertDataFrom(selectedCar car: Car) {
+        carImageView.image = UIImage(data: car.imageData!)
+        markLabel.text = car.mark
+        modelLabel.text = car.model
+        myChoiceImageView.isHidden = !car.myChoice
+        ratingLabel.text = "Rating \(car.rating) / 10"
+        numberOfTripsLabel.text = "Number of trips: \(car.timesDriven)"
+        lastTimeStartedLabel.text = "Last time started: \(dateFormatter.string(from: car.lastStarted!   ))"
+        segmentedControl.tintColor = car.tintColor as? UIColor
+    }
+    
     private func getDataFromFile() {
+        let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "mark != nil")
+        
+        var records = 0
+        
+        do {
+            records = try context.count(for: fetchRequest)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        guard records == 0 else { return }
+        
         guard let pathToFile = Bundle.main.path(forResource: "data", ofType: "plist"),
               let dataArray = NSArray(contentsOfFile: pathToFile) else { return }
         
@@ -78,11 +109,25 @@ class ViewController: UIViewController {
         let launched = userDefaults.bool(forKey: "launched")
         
         //это будет первый запуск приложения
-        if !launched {
-            getDataFromFile()
-            userDefaults.set(true, forKey: "launched")
-        } else { // это второй уже запуск будет
-            
+//        if !launched {
+//            getDataFromFile()
+//            userDefaults.set(true, forKey: "launched")
+//        } else { // это второй уже запуск будет
+//
+//        }
+        
+        getDataFromFile()
+        
+        let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
+        let mark = segmentedControl.titleForSegment(at: 2)
+        fetchRequest.predicate = NSPredicate(format: "mark == %@", mark!)
+        
+        do {
+          let result =  try context.fetch(fetchRequest)
+            let car = result.first
+            insertDataFrom(selectedCar: car!)
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
         
     }
