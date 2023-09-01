@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     var context: NSManagedObjectContext!
     var car: Car!
     
+    
     lazy var dateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateStyle = .short
@@ -21,7 +22,16 @@ class ViewController: UIViewController {
         return df
     }()
     
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var segmentedControl: UISegmentedControl! {
+        didSet {
+            updateSegmentedControl()
+            let white = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            let orange = [NSAttributedString.Key.foregroundColor: UIColor.orange]
+            
+            UISegmentedControl.appearance().setTitleTextAttributes(white, for: .normal)
+            UISegmentedControl.appearance().setTitleTextAttributes(orange, for: .selected)
+        }
+    }
     @IBOutlet weak var markLabel: UILabel!
     @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var carImageView: UIImageView!
@@ -31,7 +41,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var myChoiceImageView: UIImageView!
     
     @IBAction func segmentedCtrlPressed(_ sender: UISegmentedControl) {
-        
+        updateSegmentedControl()
     }
     
     @IBAction func startEnginePressed(_ sender: UIButton) {
@@ -66,8 +76,23 @@ class ViewController: UIViewController {
         present(ac, animated: true)
     }
     
+    private func updateSegmentedControl() {
+        let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
+        let mark = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex)
+        fetchRequest.predicate = NSPredicate(format: "mark == %@", mark!)
+        
+        do {
+            let result =  try context.fetch(fetchRequest)
+            car = result.first
+            insertDataFrom(selectedCar: car!)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
     private func update(rating: Double) {
         car.rating = rating
+        
         
         do {
             try context.save()
@@ -158,17 +183,7 @@ class ViewController: UIViewController {
         
         getDataFromFile()
         
-        let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
-        let mark = segmentedControl.titleForSegment(at: 2)
-        fetchRequest.predicate = NSPredicate(format: "mark == %@", mark!)
         
-        do {
-            let result =  try context.fetch(fetchRequest)
-            car = result.first
-            insertDataFrom(selectedCar: car!)
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
         
     }
     

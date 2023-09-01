@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dPO-Cy-q9y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dPO-Cy-q9y">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,13 +22,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lamborginiMurcielago" translatesAutoresizingMaskIntoConstraints="NO" id="y3a-NW-zqU">
-                                <rect key="frame" x="20" y="181.5" width="374" height="136.5"/>
+                                <rect key="frame" x="20" y="185.5" width="374" height="136.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="y3a-NW-zqU" secondAttribute="height" multiplier="35:8" constant="-223.125" id="AsW-Gl-sfU"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Dfe-Rj-7gg">
-                                <rect key="frame" x="93.5" y="64" width="227" height="33"/>
+                                <rect key="frame" x="93.5" y="68" width="227" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Dfe-Rj-7gg" secondAttribute="height" multiplier="76:11" id="rfw-Rz-nIV"/>
                                 </constraints>
@@ -35,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: X / 10.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EN-b9-D5Z">
-                                <rect key="frame" x="263" y="336" width="131" height="22"/>
+                                <rect key="frame" x="263" y="340" width="131" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8EN-b9-D5Z" secondAttribute="height" multiplier="36:7" constant="17.857142857142847" id="2h3-gU-Wi1"/>
                                 </constraints>
@@ -44,12 +46,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last time started:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNe-we-hUt">
-                                <rect key="frame" x="20" y="336" width="374" height="22"/>
+                                <rect key="frame" x="20" y="340" width="374" height="22"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isn-3B-is5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isn-3B-is5">
                                 <rect key="frame" x="16" y="806" width="112" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Isn-3B-is5" secondAttribute="height" multiplier="16:15" constant="77.866666666666674" id="KTe-KO-tr1"/>
@@ -63,20 +65,20 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myChoice" translatesAutoresizingMaskIntoConstraints="NO" id="ToI-Cy-9wL">
-                                <rect key="frame" x="134" y="460" width="146" height="145.5"/>
+                                <rect key="frame" x="134" y="464" width="146" height="145.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ToI-Cy-9wL" secondAttribute="height" multiplier="1:1" id="tYn-LF-cPO"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YNi-HY-4jD">
-                                <rect key="frame" x="86" y="105.5" width="242" height="43"/>
+                                <rect key="frame" x="86" y="109.5" width="242" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="YNi-HY-4jD" secondAttribute="height" multiplier="162:29" id="AQE-Ae-eES"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="24"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhN-gx-E4c">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhN-gx-E4c">
                                 <rect key="frame" x="282" y="806" width="112" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zhN-gx-E4c" secondAttribute="height" multiplier="23:15" constant="62.93333333333333" id="u4Z-9r-sVD"/>
@@ -90,13 +92,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of trips: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6A-b3-RO1">
-                                <rect key="frame" x="16" y="366" width="382" height="22"/>
+                                <rect key="frame" x="16" y="370" width="382" height="22"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qpB-I9-Qc0">
-                                <rect key="frame" x="0.0" y="413" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="417" width="414" height="32"/>
                                 <segments>
                                     <segment title="Lamborgini"/>
                                     <segment title="Ferrari"/>
@@ -104,11 +106,14 @@
                                     <segment title="Nissan"/>
                                     <segment title="BMW"/>
                                 </segments>
+                                <color key="tintColor" systemColor="linkColor"/>
+                                <color key="selectedSegmentTintColor" red="0.59607843140000005" green="0.86666666670000003" blue="0.59110456680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="segmentedCtrlPressed:" destination="dPO-Cy-q9y" eventType="valueChanged" id="lav-YD-oyp"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="XGI-Ss-xom"/>
                         <color key="backgroundColor" red="0.99492442609999998" green="0.99004387859999998" blue="0.98989319799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8EN-b9-D5Z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Dum-RP-b8w" secondAttribute="leading" constant="20" symbolic="YES" id="4k8-J4-TFw"/>
@@ -144,7 +149,6 @@
                             <constraint firstItem="Dfe-Rj-7gg" firstAttribute="top" secondItem="XGI-Ss-xom" secondAttribute="top" constant="20" id="vvu-lP-N1s"/>
                             <constraint firstItem="y3a-NW-zqU" firstAttribute="centerX" secondItem="YNi-HY-4jD" secondAttribute="centerX" id="ymy-Qu-5K3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="XGI-Ss-xom"/>
                     </view>
                     <connections>
                         <outlet property="carImageView" destination="y3a-NW-zqU" id="CuT-9s-GDD"/>
@@ -166,5 +170,8 @@
         <image name="button" width="112" height="32"/>
         <image name="lamborginiMurcielago" width="210" height="101"/>
         <image name="myChoice" width="150" height="150"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

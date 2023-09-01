@@ -170,4 +170,78 @@ import UIKit
 //print("5")
 // 1 2 4 5 3
 
+//
+//func cowboy ( weaponInStore: Int, cash: Int, weapons: [Int]) -> Int {
+//    guard weaponInStore == weapons.count else { return 0 }
+//    guard weapons.min()! < cash else { return 0}
+//    return weapons.filter{$0 < cash}.max()!
+//}
+////
+//cowboy(weaponInStore: [34, 6, 300, 15], cash: 13, weapons: 5)
+
+//
+//func cowboy (s: String) -> Int {
+//    let sheriff = "sheriff"
+//    var character = [Character: Int]()
+//
+//    for char in s {
+//        character[char, default: 0] += 1
+//    }
+//
+//    var word = Int.max
+//
+//    for char in sheriff {
+//        if let frequency = character[char] {
+//            word = min(word, frequency)
+//        } else {
+//            return 0
+//        }
+//    }
+//
+//    return word
+//}
+//
+//cowboy(s: "fheriherffazfszkisrrs")
+
+
+//func cowboy(n: Int, arr: [Int], arrForWin: [Int]) -> String {
+//    var joe = arr.enumerated().map{ ($0.element, $0.offset) }
+//        joe.sort(by: { $0.0 < $1.0 })
+//
+//        var current = 0
+//
+//        for (_, index) in joe {
+//            if arrForWin[current] == arr[index] {
+//                current += 1
+//                if current == n {
+//                    return "YES"
+//                }
+//            }
+//        }
+//        return "NO"
+//}
+//
+//// Read input
+//let n = 5
+//let joeSequence = [1, 4, 2, 2, 4]
+//let winningSequence = [1, 4, 4, 2, 2]
+//
+//// Check if Joe can obtain the winning sequence
+//let result = cowboy(n: n, arr: joeSequence, arrForWin: winningSequence)
+//
+//// Print the result
+//print(result)
+
+
+//func cowboy() -> Int {
+//
+//
+//    return 0
+//}
+
+
+
+
+
+
 
