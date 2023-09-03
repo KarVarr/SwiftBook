@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		177F78052AA476E000A6C3B5 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177F78012AA476E000A6C3B5 /* User+CoreDataClass.swift */; };
+		177F78062AA476E000A6C3B5 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177F78022AA476E000A6C3B5 /* User+CoreDataProperties.swift */; };
+		177F78072AA476E000A6C3B5 /* Meal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177F78032AA476E000A6C3B5 /* Meal+CoreDataClass.swift */; };
+		177F78082AA476E000A6C3B5 /* Meal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177F78042AA476E000A6C3B5 /* Meal+CoreDataProperties.swift */; };
+		17ADE3352AA46A800020AB89 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ADE3342AA46A800020AB89 /* CoreDataStack.swift */; };
+		17ADE3382AA46D740020AB89 /* MealTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17ADE3362AA46D740020AB89 /* MealTime.xcdatamodeld */; };
 		3585ECD123AB6B7200F49C82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3585ECD023AB6B7200F49C82 /* AppDelegate.swift */; };
 		3585ECD323AB6B7200F49C82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3585ECD223AB6B7200F49C82 /* SceneDelegate.swift */; };
 		3585ECD523AB6B7200F49C82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3585ECD423AB6B7200F49C82 /* ViewController.swift */; };
@@ -16,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		177F78012AA476E000A6C3B5 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		177F78022AA476E000A6C3B5 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		177F78032AA476E000A6C3B5 /* Meal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Meal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		177F78042AA476E000A6C3B5 /* Meal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Meal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		17ADE3342AA46A800020AB89 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		17ADE3372AA46D740020AB89 /* MealTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MealTime.xcdatamodel; sourceTree = "<group>"; };
 		3585ECCD23AB6B7200F49C82 /* MealTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3585ECD023AB6B7200F49C82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3585ECD223AB6B7200F49C82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,9 +49,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		177F78092AA4770100A6C3B5 /* CoreData Entities */ = {
+			isa = PBXGroup;
+			children = (
+				177F78012AA476E000A6C3B5 /* User+CoreDataClass.swift */,
+				177F78022AA476E000A6C3B5 /* User+CoreDataProperties.swift */,
+				177F78032AA476E000A6C3B5 /* Meal+CoreDataClass.swift */,
+				177F78042AA476E000A6C3B5 /* Meal+CoreDataProperties.swift */,
+			);
+			path = "CoreData Entities";
+			sourceTree = "<group>";
+		};
 		3585ECC423AB6B7200F49C82 = {
 			isa = PBXGroup;
 			children = (
+				177F78092AA4770100A6C3B5 /* CoreData Entities */,
 				3585ECCF23AB6B7200F49C82 /* MealTime */,
 				3585ECCE23AB6B7200F49C82 /* Products */,
 			);
@@ -57,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				3585ECD023AB6B7200F49C82 /* AppDelegate.swift */,
+				17ADE3362AA46D740020AB89 /* MealTime.xcdatamodeld */,
+				17ADE3342AA46A800020AB89 /* CoreDataStack.swift */,
 				3585ECD223AB6B7200F49C82 /* SceneDelegate.swift */,
 				3585ECD423AB6B7200F49C82 /* ViewController.swift */,
 				3585ECD623AB6B7200F49C82 /* Main.storyboard */,
@@ -93,8 +119,9 @@
 		3585ECC523AB6B7200F49C82 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Ivan Akulov";
 				TargetAttributes = {
 					3585ECCC23AB6B7200F49C82 = {
@@ -140,7 +167,13 @@
 			files = (
 				3585ECD523AB6B7200F49C82 /* ViewController.swift in Sources */,
 				3585ECD123AB6B7200F49C82 /* AppDelegate.swift in Sources */,
+				177F78052AA476E000A6C3B5 /* User+CoreDataClass.swift in Sources */,
+				177F78062AA476E000A6C3B5 /* User+CoreDataProperties.swift in Sources */,
 				3585ECD323AB6B7200F49C82 /* SceneDelegate.swift in Sources */,
+				177F78082AA476E000A6C3B5 /* Meal+CoreDataProperties.swift in Sources */,
+				17ADE3352AA46A800020AB89 /* CoreDataStack.swift in Sources */,
+				177F78072AA476E000A6C3B5 /* Meal+CoreDataClass.swift in Sources */,
+				17ADE3382AA46D740020AB89 /* MealTime.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +225,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -252,6 +286,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -338,6 +373,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		17ADE3362AA46D740020AB89 /* MealTime.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				17ADE3372AA46D740020AB89 /* MealTime.xcdatamodel */,
+			);
+			currentVersion = 17ADE3372AA46D740020AB89 /* MealTime.xcdatamodel */;
+			path = MealTime.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3585ECC523AB6B7200F49C82 /* Project object */;
 }

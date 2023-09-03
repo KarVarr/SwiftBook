@@ -2,14 +2,15 @@
 //  AppDelegate.swift
 //  MealTime
 //
-//  Created by Ivan Akulov on 10/02/2020.
-//  Copyright © 2020 Ivan Akulov. All rights reserved.
+//  Created by Karen Vardanian on 03/09/2023.
 //
 
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var coreDataStack = CoreDataStack()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
