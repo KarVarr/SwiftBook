@@ -1,5 +1,7 @@
-import Foundation
+
 import UIKit
+import PlaygroundSupport
+
 //protocol SwimBehavior{
 //    func swim()
 //}
@@ -240,8 +242,155 @@ import UIKit
 //}
 
 
+//
+//let backQueue = DispatchQueue.global(qos: .background)
+//let mainQueue = DispatchQueue.main
+//let serial = DispatchQueue(label: "mainSerial")
+//let concurrent = DispatchQueue(label: "concurrent", attributes: .concurrent)
+//
+//print(" 1 sec")
+//DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//    print("hello 3 sec after")
+//}
+//print("2 sec")
 
+//print("start of file")
+//DispatchQueue.global(qos: .background).sync {
+//    for i in 0...30 {
+//        print("userInteractive \(i)")
+//    }
+//}
+//
+//DispatchQueue.global(qos: .background).async {
+//    for i in 0...30 {
+//        print("background \(i)")
+//    }
+//}
+//print("end of file")
 
+//let thread111 = Thread {
+//    print("start hi")
+//}
+//
+//thread111.start()
+//print("stop")
+//thread111.isMainThread
+//thread111.main()
+//thread111.isMainThread
+//thread111.isFinished
+//thread111.cancel()
 
+//DispatchQueue.global()
 
+//let th = Thread {
+//    for _ in 0...10 {
+//        print("heo")
+//    }
+//}
+//th.qualityOfService = .userInitiated
+//th.start()
+//print("test or code here")
+//th.cancel()
+//
+//
+//
+//class MyViewController : UIViewController {
+//    let button = UIButton(type: .system)
+//    override func loadView() {
+//        super.loadView()
+//        let view = UIView()
+//
+//
+//        view.backgroundColor = .lightGray
+//        self.view = view
+//        button.addTarget(self, action: #selector(pressAction), for: .touchUpInside)
+//    }
+//
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        initButton()
+//    }
+//
+//
+//    @objc func pressAction() {
+//        let vc = TwoViewController()
+//        navigationController?.pushViewController(vc, animated: true)
+//
+//    }
+//    func initButton() {
+//        button.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
+//        button.setTitle("Press", for: .normal)
+//        button.setTitleColor(.white, for: .normal)
+//        button.center = view.center
+//        button.backgroundColor = .orange
+//        button.layer.cornerRadius = 25
+//        button.layer.shadowOpacity = 0.3
+//        button.layer.shadowOffset = CGSize(width: 5, height: 5)
+//        view.addSubview(button)
+//    }
+//}
+//
+//let vc = MyViewController()
+//let navbar = UINavigationController(rootViewController: vc)
+//vc.title = "VC 1"
+//
+//// Present the view controller in the Live View window
+//PlaygroundPage.current.liveView = MyViewController()
+//
+//class TwoViewController : UIViewController {
+//
+//        override func loadView() {
+//        super.loadView()
+//        let view = UIView()
+//
+//        view.backgroundColor = .cyan
+//        self.view = view
+//    }
+//
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//    }
+//}
+//
+//let vc2 = TwoViewController()
+//vc2.title = "VC 2"
+//
 
+//func benchmark(_ closure: () -> Void) {
+//    let startTime = Date()
+//    closure()
+//    let endTime = Date()
+//
+//    let timeElapsed = endTime.timeIntervalSince(startTime)
+//    print("Time elapsed: \(timeElapsed) s.")
+//}
+//
+//benchmark {
+//    print("start")
+//}
+
+func test( word: String, completion: @escaping (String) -> ()) {
+    sleep(2)
+    print(word)
+    sleep(2)
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        completion("Finish escaping")
+    }
+    
+//    for i in word {
+//        completion(String(i))
+//    }
+    sleep(5)
+    completion("pipi")
+}
+//
+//test(word: "Hello lox") { lox in
+//    print(lox.uppercased())
+//    print(lox.map{$0})
+//}
+
+test(word: "change pace for completion", completion: { words in
+    print("here is new word --> \(words)")
+})
