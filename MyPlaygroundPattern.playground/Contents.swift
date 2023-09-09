@@ -369,28 +369,145 @@ import PlaygroundSupport
 //benchmark {
 //    print("start")
 //}
-
-func test( word: String, completion: @escaping (String) -> ()) {
-    sleep(2)
-    print(word)
-    sleep(2)
-    
-    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-        completion("Finish escaping")
-    }
-    
-//    for i in word {
-//        completion(String(i))
-//    }
-    sleep(5)
-    completion("pipi")
-}
 //
-//test(word: "Hello lox") { lox in
-//    print(lox.uppercased())
-//    print(lox.map{$0})
+//func test( word: String, completion: @escaping (String) -> ()) {
+//    sleep(2)
+//    print(word)
+//    sleep(2)
+//
+//    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//        completion("Finish escaping")
+//    }
+//
+////    for i in word {
+////        completion(String(i))
+////    }
+//    sleep(5)
+//    completion("pipi")
+//}
+////
+////test(word: "Hello lox") { lox in
+////    print(lox.uppercased())
+////    print(lox.map{$0})
+////}
+//
+//test(word: "change pace for completion", completion: { words in
+//    print("here is new word --> \(words)")
+//})
+//
+//struct UserData {
+//    let name: String
+//    let friends: [String]
+//    let highScores: [Int]
+//}
+//func getUser () async -> String {
+//    "Taylor Swift"
+//}
+//func getHighScores () async -> [Int] {
+//    [42, 23, 16, 15, 8,41]
+//}
+//func getFriends () async -> [String] {
+//    ["Eric", "Maeve", "Otis"]
+//}
+//func printUserDetails() async {
+//    async let username = getUser()
+//    sleep(3)
+//    async let scores = getHighScores()
+//    sleep(3)
+//    async let friends = getFriends()
+//    sleep(2)
+//    let user = await UserData(name: username, friends: friends, highScores: scores)
+//    print("Hello, my name is \(user.name), and I have \(user.friends.count) friends!")
+//}
+//
+//Task {
+//    await printUserDetails()
 //}
 
-test(word: "change pace for completion", completion: { words in
-    print("here is new word --> \(words)")
-})
+
+//enum NumberError: Error {
+//    case outOfRange
+//}
+//
+//func fibonacci(of number: Int) async throws -> Int {
+//    if number < 0 || number > 22 {
+//        throw NumberError.outOfRange
+//    }
+//
+//    if number < 2 { return number }
+//    async let first = fibonacci(of: number - 2)
+//    async let second = fibonacci(of: number - 1)
+//    let result = try await first + second
+//    return result
+//}
+//
+//Task {
+//    do {
+//        print(try await fibonacci(of: 23))
+//    } catch {
+//        print(error.localizedDescription)
+//    }
+//}
+
+//
+//let queue = DispatchQueue.global()
+//
+//queue.async {
+//    print("Hello")
+//}
+//queue.async {
+//    print("Lox")
+//}
+//
+//    print("epta")
+//
+//
+//
+//let oper = OperationQueue()
+//
+//oper.addOperation {
+//    print("Huly")
+//}
+//
+//let block = BlockOperation()
+//block.addExecutionBlock {
+//    print("block nahoi")
+//}
+//
+//oper.addOperation {
+//        block.cancel()
+//}
+//
+//let block = BlockOperation {
+//    for i in 0...10 {
+//        print("block \(i)")
+//    }
+//}
+//
+//let oper = OperationQueue()
+//oper.maxConcurrentOperationCount = 10
+//oper.addOperation(block)
+//
+//
+//let th = Thread {
+//    for i in 0..<10 {
+//        print("push \(i)")
+//    }
+//}
+//th.start()
+//
+
+let sq = DispatchQueue(label: "serial")
+
+let item  = DispatchWorkItem {
+    print("test")
+}
+item.notify(queue: sq) {
+    print("Finish")
+}
+
+sq.async {
+    sleep(1)
+}
+sq.async(execute: item)
+item.cancel()
