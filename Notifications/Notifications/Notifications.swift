@@ -38,6 +38,20 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
         content.sound = UNNotificationSound.default
         content.badge = 1
         content.categoryIdentifier = userAction
+        
+        guard let path = Bundle.main.path(forResource: "favicon", ofType: "png") else { return }
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            let attachment = try UNNotificationAttachment(identifier: "favicon", url: url)
+            content.attachments = [attachment]
+        } catch  {
+            print("The attachment could't be load \(error)")
+        }
+        
+        
+        
+        
         let identifier = "Local Notification"
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
