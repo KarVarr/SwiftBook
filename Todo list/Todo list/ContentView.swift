@@ -8,14 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var currentTodo = ""
+    @State private var todos: [Item] = []
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack {
+                HStack {
+                    TextField("New todo...", text: $currentTodo)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    Button {
+                        guard !self.currentTodo.isEmpty else { return }
+                        self.todos.append(Item(todo: self.currentTodo))
+                        self.currentTodo = ""
+                    } label: {
+                        Image(systemName: "text.badge.plus")
+                    }
+                    .padding(.leading, 5)
+
+                }
+                .padding()
+                
+                List {
+                    Text("This is something in my list!")
+                    Text("This is also in my list!")
+                    Text("And another thing!")
+                }
+            }
+            .navigationTitle("Todo List")
         }
-        .padding()
     }
 }
 
