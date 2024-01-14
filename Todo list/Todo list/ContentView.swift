@@ -21,6 +21,7 @@ struct ContentView: View {
                         guard !self.currentTodo.isEmpty else { return }
                         self.todos.append(Item(todo: self.currentTodo))
                         self.currentTodo = ""
+                        save()
                     } label: {
                         Image(systemName: "text.badge.plus")
                     }
@@ -30,14 +31,41 @@ struct ContentView: View {
                 .padding()
                 
                 List {
-                    Text("This is something in my list!")
-                    Text("This is also in my list!")
-                    Text("And another thing!")
+                    ForEach(todos) { todoEntry in
+                        Text(todoEntry.todo)
+                    }
+                    .onDelete(perform: { indexSet in
+                        delete(at: indexSet)
+                    })
                 }
+                
+                
             }
             .navigationTitle("Todo List")
         }
+        .onAppear(perform: {
+            load()
+        })
     }
+    
+    private func save() {
+        UserDefaults.standard.set (try? PropertyListEncoder().encode(self.todos), forKey: "myTodosKey")
+    }
+    
+    private func load() {
+        if let todosData = UserDefaults.standard.value(forKey: "myTodosKey") as? Data {
+            if let todosList = try? PropertyListDecoder().decode(Array<Item>.self, from: todosData) {
+                self.todos = todosList
+            }
+        }
+    }
+    
+    private func delete(at offset: IndexSet) {
+        self.todos.remove(atOffsets: offset)
+        save()
+    }
+    
+    
 }
 
 #Preview {
