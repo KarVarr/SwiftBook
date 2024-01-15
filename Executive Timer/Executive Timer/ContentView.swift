@@ -13,7 +13,7 @@ struct ContentView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     @State private var timerRunning = false
-    @State private var countdownTime: CGFloat = 20 // Initial value, you may want to adjust this
+    @State private var countdownTime: CGFloat = 20
 
     var strokeStyle: StrokeStyle {
         StrokeStyle(lineWidth: 15, lineCap: .round)
@@ -32,18 +32,42 @@ struct ContentView: View {
     }
 
     var body: some View {
-        VStack {
+        ZStack {
             Circle()
                 .stroke(Color.gray.opacity(0.2), style: strokeStyle)
-                .frame(width: 300, height: 300)
 
             Circle()
                 .trim(from: 0, to: 1 - ((defaultTime - countdownTime) / defaultTime))
                 .stroke(countdownColor, style: strokeStyle)
                 .rotationEffect(.degrees(-90))
-                .animation(.easeInOut) // You can use withAnimation here if needed
+                .animation(.easeInOut) 
+            
+            HStack(spacing: 25) {
+                Label("", systemImage: buttonIcon)
+                    .foregroundStyle(.black).font(.title)
+                    .onTapGesture(perform: {
+                        timerRunning.toggle()
+                    })
+                Text("\(Int(countdownTime))")
+                    .font(.largeTitle)
+                Label("", systemImage: "gobackward")
+                    .foregroundStyle(.red)
+                    .onTapGesture(perform: {
+                        timerRunning = false
+                        countdownTime = defaultTime
+                    })
+            }
         }
-        .padding()
+        .frame(width: 300, height: 300)
+        .onReceive(timer, perform: { _ in
+            guard timerRunning else { return }
+            if countdownTime > 0 {
+                countdownTime -= 1
+            } else {
+                timerRunning = false
+                countdownTime = defaultTime
+            }
+        })
     }
 }
 
